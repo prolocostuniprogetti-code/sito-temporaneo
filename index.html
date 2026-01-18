@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Loco Ostuni APS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Montserrat', sans-serif; }
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; }
+        
+        /* Menu di Navigazione */
+        nav { 
+            position: fixed; top: 0; width: 100%; padding: 15px 0; 
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000;
+        }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: #d4af37; }
+
         .bg-image {
             background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('2021-08-04.webp');
-            height: 100vh;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 100vh; background-position: center; background-size: cover;
+            display: flex; align-items: center; justify-content: center;
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 40px; border-radius: 30px; text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2); width: 85%; max-width: 600px; margin-top: 50px;
         }
-        h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .tag { color: #d4af37; font-weight: bold; display: block; margin-bottom: 10px; }
+
+        .social-btns { margin-top: 25px; display: flex; flex-direction: column; gap: 10px; }
+        .btn { padding: 12px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; border: 1px solid white; }
+        .btn-wa { background: #25D366; border: none; }
     </style>
 </head>
 <body>
-    <div class="bg-image">
-        <div class="glass-card">
-            <span class="tag">ASSOCIATA UNPLI</span>
-            <h1>PRO LOCO OSTUNI</h1>
-            <p>Sito in costruzione · APS Iscritta al RUNTS</p>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi Siamo</a>
+    <a href="trasparenza.html">Trasparenza</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="unisciti.html">Unisciti</a>
+</nav>
+
+<div class="bg-image">
+    <div class="glass-card">
+        <span style="color: #d4af37; font-weight: bold; letter-spacing: 2px;">ASSOCIATA UNPLI</span>
+        <h1 style="font-size: 2rem; margin: 10px 0;">PRO LOCO OSTUNI</h1>
+        <p>Custodi della Città Bianca e della sua cultura.</p>
+        
+        <div class="social-btns">
+            <a href="https://wa.me/39XXXXXXXXXX" class="btn btn-wa">Contattaci su WhatsApp</a>
+            <a href="unisciti.html" class="btn">Diventa Socio</a>
         </div>
     </div>
+</div>
+
 </body>
 </html>
