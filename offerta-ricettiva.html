@@ -4,33 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ospitalità - Pro Loco Ostuni APS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: white; background: #1a1a1a; }
-        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000; }
-        nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.95); display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000; border-bottom: 1px solid #d4af37; }
+        nav a { color: white; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
         .header-spacer { height: 120px; }
-        .content { padding: 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        h1 { color: #d4af37; }
+        .content { padding: 20px; max-width: 1100px; margin: 0 auto; }
+        h1 { color: #d4af37; text-align: center; font-size: 2rem; }
+        h2 { color: #d4af37; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 10px; margin-top: 40px; }
         
-        .hotel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .hotel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 20px; }
         
-        /* CARD CLICCABILE REALE */
-        .hotel-card {
-            background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px;
+        .card {
+            background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: white;
-            display: block; transition: 0.3s;
+            display: block; transition: 0.2s;
         }
-        .hotel-card:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.1); transform: translateY(-5px); }
-        .hotel-card strong { color: #d4af37; display: block; font-size: 1.1rem; margin-bottom: 5px; }
-        .hotel-card span { font-size: 0.8rem; opacity: 0.7; }
-        .btn-map { display: inline-block; margin-top: 15px; font-size: 0.7rem; font-weight: bold; color: #d4af37; border: 1px solid #d4af37; padding: 5px 10px; border-radius: 5px; }
-
-        .full-list-btn { 
-            display: inline-block; margin-top: 50px; padding: 15px 30px; 
-            background: #d4af37; color: black; text-decoration: none; 
-            border-radius: 50px; font-weight: bold; 
-        }
+        .card:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.1); }
+        .card strong { color: #d4af37; display: block; font-size: 0.9rem; margin-bottom: 3px; }
+        .card span { font-size: 0.75rem; opacity: 0.7; display: block; }
     </style>
 </head>
 <body>
@@ -49,44 +42,49 @@
 <div class="header-spacer"></div>
 
 <div class="content">
-    <h1>Ospitalità a Ostuni</h1>
-    <p>Seleziona una struttura per vedere i dettagli e la posizione.</p>
+    <h1>Dove Dormire a Ostuni</h1>
 
+    <h2>Hotel e Resort</h2>
     <div class="hotel-grid">
-        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Sarago+Ostuni" target="_blank" class="hotel-card">
-            <strong>Hotel Monte Sarago</strong>
-            <span>Corso Mazzini, 350</span>
-            <div class="btn-map">APRI INFO E MAPPA</div>
-        </a>
-
-        <a href="https://www.google.com/maps/search/?api=1&query=Ostuni+Rosa+Marina+Resort" target="_blank" class="hotel-card">
-            <strong>Rosa Marina Resort</strong>
-            <span>Località Rosa Marina</span>
-            <div class="btn-map">APRI INFO E MAPPA</div>
-        </a>
-
-        <a href="https://www.google.com/maps/search/?api=1&query=Relais+La+Sommita+Ostuni" target="_blank" class="hotel-card">
-            <strong>Relais La Sommità</strong>
-            <span>Centro Storico</span>
-            <div class="btn-map">APRI INFO E MAPPA</div>
-        </a>
-
-        <a href="https://www.google.com/maps/search/?api=1&query=Agriturismo+Salinola+Ostuni" target="_blank" class="hotel-card">
-            <strong>Agriturismo Salinola</strong>
-            <span>Contrada Salinola</span>
-            <div class="btn-map">APRI INFO E MAPPA</div>
-        </a>
-
-        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Asciano+Ostuni" target="_blank" class="hotel-card">
-            <strong>Masseria Asciano</strong>
-            <span>Contrada Lardagnano</span>
-            <div class="btn-map">APRI INFO E MAPPA</div>
-        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Sarago+Ostuni" target="_blank" class="card"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rosa+Marina+Resort+Ostuni" target="_blank" class="card"><strong>Rosa Marina Resort</strong><span>Litorale</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Relais+La+Sommita+Ostuni" target="_blank" class="card"><strong>Relais La Sommità</strong><span>Centro Storico</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Ostuni+Palace" target="_blank" class="card"><strong>Ostuni Palace</strong><span>C.so Vitt. Emanuele</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Incanto+Ostuni" target="_blank" class="card"><strong>Hotel Incanto</strong><span>Via dei Colli</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=La+Terra+Hotel+Ostuni" target="_blank" class="card"><strong>La Terra Hotel</strong><span>Vico Castello</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Citta+Bianca+Resort+Ostuni" target="_blank" class="card"><strong>Città Bianca Resort</strong><span>C.da Turco</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Paragon+700+Ostuni" target="_blank" class="card"><strong>Paragon 700</strong><span>Largo Bixio</span></a>
     </div>
 
-    <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" class="full-list-btn">
-        VEDI TUTTE LE 100+ STRUTTURE (REGISTRO PUGLIA)
-    </a>
+    <h2>Masserie e Agriturismi</h2>
+    <div class="hotel-grid">
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Salinola+Ostuni" target="_blank" class="card"><strong>Masseria Salinola</strong><span>C.da Salinola</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Asciano+Ostuni" target="_blank" class="card"><strong>Masseria Asciano</strong><span>C.da Lardagnano</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Cervarolo+Ostuni" target="_blank" class="card"><strong>Masseria Cervarolo</strong><span>C.da Cervarolo</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Il+Frantoio+Ostuni" target="_blank" class="card"><strong>Masseria Il Frantoio</strong><span>SS16 km 870</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Valente+Ostuni" target="_blank" class="card"><strong>Masseria Valente</strong><span>SP Ostuni-Brindisi</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Le+Carrube+Ostuni" target="_blank" class="card"><strong>Masseria Le Carrube</strong><span>SS16</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Tenuta+Amostuni+Ostuni" target="_blank" class="card"><strong>Tenuta Amostuni</strong><span>C.da Tamburroni</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Masseria+Muntalbano+Ostuni" target="_blank" class="card"><strong>Masseria Montalbano</strong><span>C.da Montalbano</span></a>
+    </div>
+
+    <h2>B&B e Case Vacanze</h2>
+    <div class="hotel-grid">
+        <a href="https://www.google.com/maps/search/?api=1&query=Aria+Antica+Ostuni" target="_blank" class="card"><strong>Aria Antica</strong><span>C.da Fiorentino</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ca+Gio+Ostuni" target="_blank" class="card"><strong>Cà Giò</strong><span>Via de Landria</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ca+Bellavista+Ostuni" target="_blank" class="card"><strong>Cà Bellavista</strong><span>Via Bixio</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Adriatica+Residence+Ostuni" target="_blank" class="card"><strong>Adriatica Residence</strong><span>Villanova</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=21mq+Suite+Home+Ostuni" target="_blank" class="card"><strong>21mq Suite Home</strong><span>Vicolo Scalese</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=La+Piana+degli+Ulivi+Ostuni" target="_blank" class="card"><strong>La Piana degli Ulivi</strong><span>C.da Li Cuti</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Zaffiro+Azzurro+Ostuni" target="_blank" class="card"><strong>Zaffiro Azzurro</strong><span>Rione Terra</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=B+and+B+dei+Colli+Ostuni" target="_blank" class="card"><strong>B&B dei Colli</strong><span>Via dei Colli</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dimora+nel+Borgo+Ostuni" target="_blank" class="card"><strong>Dimora nel Borgo</strong><span>Centro Storico</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Pietra+Bianca+Ostuni" target="_blank" class="card"><strong>Pietra Bianca</strong><span>Centro</span></a>
+    </div>
+
+    <p style="text-align: center; margin-top: 50px; opacity: 0.6; font-size: 0.8rem;">
+        Sei il titolare di una struttura? Inviaci i dati per l'inserimento.
+    </p>
 </div>
 
 </body>
