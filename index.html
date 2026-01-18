@@ -8,13 +8,13 @@
     <style>
         body, html { margin: 0; padding: 0; height: 100%; font-family: 'Montserrat', sans-serif; color: white; overflow-x: hidden; }
         
-        /* Menu di Navigazione */
+        /* Menu di Navigazione ottimizzato per Tablet */
         nav { 
             position: fixed; top: 0; width: 100%; padding: 15px 0; 
-            background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000;
         }
-        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 2px; }
         nav a:hover { color: #d4af37; }
 
         .bg-image {
@@ -26,13 +26,15 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            padding: 40px; border-radius: 30px; text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2); width: 85%; max-width: 600px; margin-top: 50px;
+            padding: 40px 20px; border-radius: 30px; text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2); width: 85%; max-width: 600px; margin-top: 60px;
         }
 
-        .social-btns { margin-top: 25px; display: flex; flex-direction: column; gap: 10px; }
-        .btn { padding: 12px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; border: 1px solid white; }
+        .social-btns { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
+        .btn { padding: 14px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; border: 1px solid white; font-size: 0.9rem; }
         .btn-wa { background: #25D366; border: none; }
+        
+        .tag { color: #d4af37; font-weight: bold; letter-spacing: 2px; font-size: 0.8rem; display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -41,20 +43,25 @@
     <a href="index.html">Home</a>
     <a href="chi-siamo.html">Chi Siamo</a>
     <a href="trasparenza.html">Trasparenza</a>
+    <a href="turismo.html">Turismo</a>
+    <a href="convenzioni.html">Convenzioni</a>
+    <a href="offerta-ricettiva.html">Ospitalità</a>
     <a href="eventi.html">Eventi</a>
     <a href="unisciti.html">Unisciti</a>
 </nav>
 
 <div class="bg-image">
     <div class="glass-card">
-        <span style="color: #d4af37; font-weight: bold; letter-spacing: 2px;">ASSOCIATA UNPLI</span>
-        <h1 style="font-size: 2rem; margin: 10px 0;">PRO LOCO OSTUNI</h1>
-        <p>Custodi della Città Bianca e della sua cultura.</p>
+        <span class="tag">ASSOCIATA UNPLI</span>
+        <h1 style="font-size: 2.2rem; margin: 10px 0; line-height: 1.2;">PRO LOCO OSTUNI</h1>
+        <p style="font-size: 1rem; margin-bottom: 20px;">Custodi della Città Bianca e della sua cultura.</p>
         
         <div class="social-btns">
-            <a href="https://wa.me/39XXXXXXXXXX" class="btn btn-wa">Contattaci su WhatsApp</a>
-            <a href="unisciti.html" class="btn">Diventa Socio</a>
+            <a href="https://wa.me/39XXXXXXXXXX" class="btn btn-wa">Invia un messaggio WhatsApp</a>
+            <a href="unisciti.html" class="btn">Diventa Socio Pro Loco</a>
         </div>
+        
+        <p style="font-size: 0.7rem; margin-top: 30px; opacity: 0.8;">Sito in costruzione · APS Iscritta al RUNTS</p>
     </div>
 </div>
 
