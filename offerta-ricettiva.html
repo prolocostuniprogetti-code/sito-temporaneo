@@ -3,40 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ospitalità - Pro Loco Ostuni APS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ospitalità - Pro Loco Ostuni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0077b6; /* Blu mare */
-            --secondary: #fdfdfd; /* Bianco calce */
-            --accent: #2a9d8f; /* Verde ulivo */
-            --text: #333;
-        }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #2d3436; }
+        
+        /* Navigazione Moderna Blu */
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: #0984e3; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
 
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #f4f7f6; color: var(--text); }
-        
-        /* Navigazione Chiara */
-        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: white; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav a { color: var(--primary); text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        
-        .header-spacer { height: 100px; }
-        
-        /* Hero Banner */
-        .hero { 
-            background: linear-gradient(rgba(0,119,182,0.7), rgba(0,119,182,0.7)), url('https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?auto=format&fit=crop&w=1000&q=80');
+        .header-spacer { height: 80px; }
+
+        /* Banner con Foto Bella */
+        .top-banner { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80');
             background-size: cover; background-position: center;
-            height: 300px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-bottom: 40px;
-        }
-        .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-
-        .container { padding: 20px; max-width: 1200px; margin: 0 auto; }
-        
-        /* Titoli Sezioni Solari */
-        .section-header { 
-            border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin: 50px 0 25px; 
-            color: var(--primary); text-transform: uppercase; font-weight: bold; font-size: 1.5rem;
+            height: 250px; display: flex; align-items: center; justify-content: center; color: white;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .container { padding: 30px 15px; max-width: 1100px; margin: 0 auto; }
         
-        /* Card Moderne
+        h1 { text-align: center; color: #0984e3; font-size: 2.2rem; }
+
+        /* Blocchi Categoria Colorati */
+        .cat-box { margin-bottom: 50px; }
+        .cat-name { 
+            font-size: 1.5rem; font-weight: 600; border-bottom: 4px solid #74b9ff; 
+            padding-bottom: 5px; margin-bottom: 25px; color: #0984e3;
+            display: inline-block;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+        /* Card Bianche e Pulite */
+        .card { 
+            background: #f1f2f6; border-radius: 15px; padding: 20px; 
+            text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;
+            transition: 0.3s; border: 1px solid #dfe6e9;
+        }
+        .card:hover { background: #ffffff; border-color: #0984e3; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        
+        .icon-circle { 
+            min-width: 50px; height: 50px; background: #0984e3; color: white; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+
+        .info strong { display: block; font-size: 1.1rem; color: #2d3436; }
+        .info span { font-size: 0.85rem; color: #636e72; }
+
+        .footer-cta { text-align: center; background: #dfe6e9; padding: 40px; border-radius: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi Siamo</a>
+    <a href="trasparenza.html">Trasparenza</a>
+    <a href="turismo.html">Turismo</a>
+    <a href="offerta-ricettiva.html">Ospitalità</a>
+    <a href="eventi.html">Eventi</a>
+</nav>
+
+<div class="header-spacer"></div>
+
+<div class="top-banner">
+    <h1 style="color: white; margin: 0;">Ospitalità a Ostuni</h1>
+</div>
+
+<div class="container">
+
+    <div class="cat-box">
+        <div class="cat-name">Hotel & Resort</div>
+        <div class="grid">
+            <a href="https://www.google.com/search?q=Hotel+Monte+Sarago+Ostuni" target="_blank" class="card">
+                <div class="icon-circle">🏨</div>
+                <div class="info"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Ostuni+Palace+Hotel" target="_blank" class="card">
+                <div class="icon-circle">🏨</div>
+                <div class="info"><strong>Ostuni Palace</strong><span>Centro Città</span></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <div class="cat-name">Masserie & Agriturismi</div>
+        <div class="grid">
+            <a href="https://www.google.com/search?q=Masseria+Salinola+Ostuni" target="_blank" class="card">
+                <div class="icon-circle">🌿</div>
+                <div class="info"><strong>Masseria Salinola</strong><span>Contrada Salinola</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Masseria+Asciano+Ostuni" target="_blank" class="card">
+                <div class="icon-circle">🌿</div>
+                <div class="info"><strong>Masseria Asciano</strong><span>Contrada Lardagnano</span></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <div class="cat-name">Bed & Breakfast</div>
+        <div class="grid">
+            <a href="https://www.google.com/search?q=Aria+Antica+Ostuni" target="_blank" class="card">
+                <div class="icon-circle">🏡</div>
+                <div class="info"><strong>Aria Antica</strong><span>C.da Fiorentino</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Ca+Gio+Ostuni" target="_blank" class="card">
+                <div class="icon-circle">🏡</div>
+                <div class="info"><strong>Cà Giò</strong><span>Via de Landria</span></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-cta">
+        <h3>Non trovi la tua struttura?</h3>
+        <p>Inviaci una mail per essere inserito gratuitamente nell'elenco ufficiale.</p>
+        <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" style="color:#0984e3; font-weight: bold;">Consulta l'archivio completo Regione Puglia</a>
+    </div>
+
+</div>
+
+</body>
+</html>
