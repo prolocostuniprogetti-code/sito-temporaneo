@@ -17,23 +17,29 @@
         nav a:hover { color: #d4af37; }
 
         .header-spacer { height: 120px; }
-
-        .content { padding: 20px; max-width: 900px; margin: 0 auto; }
+        .content { padding: 20px; max-width: 1000px; margin: 0 auto; }
 
         .glass-box { 
             background: rgba(255, 255, 255, 0.05); 
             padding: 30px; border-radius: 25px; 
             border: 1px solid rgba(255,255,255,0.1); 
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        h1 { color: #d4af37; font-size: 2rem; border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 20px; }
-        h2 { color: #d4af37; margin-top: 25px; font-size: 1.4rem; }
+        h1 { color: #d4af37; font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; opacity: 0.8; margin-bottom: 40px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
-        .card { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; border-left: 4px solid #d4af37; }
-        .card h3 { margin: 0; font-size: 1rem; color: #d4af37; }
-        .card p { margin: 5px 0 0; font-size: 0.85rem; opacity: 0.8; }
+        h2 { color: #d4af37; border-left: 5px solid #d4af37; padding-left: 15px; margin-top: 40px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { 
+            background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px; 
+            transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .card h3 { margin: 0 0 10px 0; color: #d4af37; font-size: 1.1rem; }
+        .card p { margin: 0; font-size: 0.9rem; line-height: 1.5; opacity: 0.9; }
+        .tag { font-size: 0.7rem; text-transform: uppercase; background: #d4af37; color: black; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
 
         .footer { text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.6; padding-bottom: 30px; }
     </style>
@@ -54,28 +60,41 @@
 <div class="header-spacer"></div>
 
 <div class="content">
+    <h1>Dove Dormire</h1>
+    <p class="subtitle">Dagli hotel di lusso alle masserie immerse negli ulivi: l'accoglienza di Ostuni per ogni esigenza.</p>
+
     <div class="glass-box">
-        <h1>Ospitalità a Ostuni</h1>
-        <p>Scopri le migliori soluzioni per il tuo soggiorno nella Città Bianca, selezionate e suggerite dalla Pro Loco Ostuni APS.</p>
-        
-        <h2>Bed & Breakfast</h2>
+        <h2>Hotel & Resort</h2>
         <div class="grid">
-            <div class="card"><h3>Aria Antica</h3><p>C.da Fiorentino - Eleganza tipica pugliese immersa negli ulivi.</p></div>
-            <div class="card"><h3>B&B Errico</h3><p>Accoglienza familiare nel cuore del territorio.</p></div>
-            <div class="card"><h3>B&B dei Colli</h3><p>Vista panoramica e relax.</p></div>
-            <div class="card"><h3>B&B Lardagnano</h3><p>Tradizione e natura.</p></div>
+            <div class="card"><span class="tag">Hotel</span><h3>Hotel Monte Sarago</h3><p>Elegante struttura con vista panoramica sulla Città Bianca e sulla costa.</p></div>
+            <div class="card"><span class="tag">Resort</span><h3>Ostuni Rosa Marina Resort</h3><p>Immerso nel verde a pochi passi dalle spiagge dell'Adriatico.</p></div>
+            <div class="card"><span class="tag">Hotel</span><h3>Relais La Sommità</h3><p>Lusso e charme nel punto più alto del centro storico.</p></div>
         </div>
 
-        <h2>Residence e Agriturismi</h2>
+        <h2>B&B e Dimore Tipiche</h2>
         <div class="grid">
-            <div class="card"><h3>Adriatica Residence</h3><p>Comfort e servizi a pochi passi dal mare.</p></div>
-            <div class="card"><h3>Agriturismo Salinola</h3><p>L'autentica esperienza rurale pugliese.</p></div>
-            <div class="card"><h3>Promogest Cala</h3><p>Località Rosamarina - Soggiorni esclusivi sulla costa.</p></div>
+            <div class="card"><span class="tag">B&B</span><h3>Cà Giò Ostuni</h3><p>Accoglienza raffinata con percorsi benessere nel cuore della città.</p></div>
+            <div class="card"><span class="tag">B&B</span><h3>Aria Antica</h3><p>L'emozione di dormire in una struttura tradizionale immersa negli ulivi.</p></div>
+            <div class="card"><span class="tag">B&B</span><h3>Cà Bellavista</h3><p>Ospitalità autentica con affacci indimenticabili.</p></div>
+        </div>
+
+        <h2>Agriturismi e Masserie</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">Agriturismo</span><h3>Masseria Asciano</h3><p>Tradizione rurale e produzione biologica di olio extravergine d'oliva.</p></div>
+            <div class="card"><span class="tag">Agriturismo</span><h3>Salinola</h3><p>Un'oasi di pace ideale per famiglie e amanti della cucina tipica.</p></div>
+            <div class="card"><span class="tag">Masseria</span><h3>Tenuta Amostuni</h3><p>Country House di charme per un soggiorno a stretto contatto con la natura.</p></div>
+        </div>
+
+        <h2>Case Vacanze</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">Appartamento</span><h3>21mq Suite Home</h3><p>Design moderno in spazi storici, perfetto per coppie.</p></div>
+            <div class="card"><span class="tag">Casa Vacanze</span><h3>Stanza Zaffiro Azzurro</h3><p>Soggiorni suggestivi nel labirinto bianco del centro storico.</p></div>
+            <div class="card"><span class="tag">Casa Vacanze</span><h3>La Piana degli Ulivi</h3><p>Soluzioni indipendenti per vivere il territorio in totale libertà.</p></div>
         </div>
     </div>
 
     <div class="footer">
-        Pro Loco Ostuni APS - Dati tratti dai partner ufficiali
+        Pro Loco Ostuni APS - Guida completa all'offerta ricettiva locale
     </div>
 </div>
 
