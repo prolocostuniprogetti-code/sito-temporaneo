@@ -11,7 +11,7 @@
         nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
         .header-spacer { height: 75px; }
 
-        /* BANNER CON LA TUA FOTO */
+        /* BANNER PRINCIPALE CON LA TUA FOTO */
         .hero-turismo { 
             height: 50vh; 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('20260118_181129.jpg');
@@ -30,12 +30,12 @@
         }
         @media (min-width: 768px) { .itinerary-card { grid-template-columns: 380px 1fr; } }
 
-        .img-box { min-height: 300px; background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .img-box { min-height: 300px; background-size: cover; background-position: center; }
         
-        /* NUOVI LINK IMMAGINI SICURI */
-        .img-alto { background-image: url('http://googleusercontent.com/image_collection/image_retrieval/13873469405191256886_0'); } 
-        .img-rosone { background-image: url('http://googleusercontent.com/image_collection/image_retrieval/2137082347192155993_0'); }
-        .img-mare { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'); }
+        /* COLLEGAMENTO AI TUOI FILE E IMMAGINI FISSE */
+        .img-alto { background-image: url('2021-08-04.jpg'); } /* La tua foto con l'ulivo e la città sullo sfondo */
+        .img-rosone { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Cattedrale_di_Ostuni_02.jpg/800px-Cattedrale_di_Ostuni_02.jpg'); } 
+        .img-mare { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Costa_merlata.jpg/800px-Costa_merlata.jpg'); }
 
         .content-box { padding: 35px; text-align: left; }
         .content-box h3 { color: #0984e3; margin-top: 0; font-size: 1.7rem; font-weight: 700; }
@@ -45,9 +45,8 @@
             display: inline-block; background: #0984e3; color: white; 
             text-decoration: none; padding: 14px 30px; border-radius: 50px; 
             font-weight: bold; margin-top: 20px; transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(9, 132, 227, 0.2);
         }
-        .btn-tour:hover { background: #00cec9; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(9, 132, 227, 0.3); }
+        .btn-tour:hover { background: #00cec9; transform: translateY(-3px); }
 
         footer { background: #0984e3; color: white; padding: 40px; margin-top: 60px; text-align: center; }
     </style>
@@ -76,14 +75,14 @@
         <div class="img-box img-alto"></div>
         <div class="content-box">
             <h3>📍 Il Borgo Antico</h3>
-            <p>Ammira la celebre "cascata" di case bianche, un panorama unico che domina la piana degli ulivi.</p>
+            <p>Passeggiata nel cuore della "Terra", ammirando la cascata di case bianche dalla piana degli ulivi.</p>
             <ul>
                 <li>Piazza della Libertà e l'Obelisco di Sant'Oronzo</li>
                 <li>Le caratteristiche "nchianate" del centro storico</li>
                 <li>Passeggiata lungo le antiche mura aragonesi</li>
                 <li>Scorci e vicoli imbiancati a calce viva</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Ostuni+Centro+Storico" target="_blank" class="btn-tour">APRI MAPPA BORGO</a>
+            <a href="https://www.google.it/maps/search/Ostuni+Centro+Storico" target="_blank" class="btn-tour">APRI MAPPA</a>
         </div>
     </div>
 
@@ -91,14 +90,14 @@
         <div class="img-box img-rosone"></div>
         <div class="content-box">
             <h3>🏛️ Arte e Storia</h3>
-            <p>Il cuore monumentale della città, con la maestosa Cattedrale e il suo Rosone a 24 raggi.</p>
+            <p>Il cuore monumentale della città, dominato dalla maestosa Cattedrale e dal suo celebre Rosone.</p>
             <ul>
                 <li>Cattedrale di Santa Maria Assunta</li>
-                <li>Il Rosone gotico, simbolo della città</li>
+                <li>Il Rosone gotico a 24 raggi</li>
                 <li>Il Museo della Civiltà Preclassiche</li>
                 <li>L'Arco Scoppa e i palazzi nobiliari</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Cattedrale+di+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI ARTE</a>
+            <a href="https://www.google.it/maps/search/Cattedrale+di+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI</a>
         </div>
     </div>
 
@@ -106,14 +105,14 @@
         <div class="img-box img-mare"></div>
         <div class="content-box">
             <h3>🌊 Marina di Ostuni</h3>
-            <p>Diciassette chilometri di litorale incontaminato, calette selvagge e spiagge Bandiera Blu.</p>
+            <p>17 km di costa con spiagge pluripremiate Bandiera Blu e calette incontaminate.</p>
             <ul>
-                <li>Il borgo marinaro e il porto di Villanova</li>
-                <li>Riserva Naturale e torri di Torre Pozzelle</li>
-                <li>Le calette sabbiose di Costa Merlata</li>
-                <li>Lido Morelli e le dune costiere</li>
+                <li>Il porticciolo di Villanova</li>
+                <li>Le calette naturali di Costa Merlata</li>
+                <li>La Riserva Naturale di Torre Pozzelle</li>
+                <li>Spiaggia del Pilone e dune costiere</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Spiagge+Ostuni" target="_blank" class="btn-tour">ESPLORA LA COSTA</a>
+            <a href="https://www.google.it/maps/search/Spiagge+Ostuni" target="_blank" class="btn-tour">ESPLORA IL MARE</a>
         </div>
     </div>
 </div>
