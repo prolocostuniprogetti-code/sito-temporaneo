@@ -6,137 +6,37 @@
     <title>Ospitalità - Pro Loco Ostuni APS</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #121212; color: white; line-height: 1.6; }
-        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.95); display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; border-bottom: 2px solid #d4af37; }
-        nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        :root {
+            --primary: #0077b6; /* Blu mare */
+            --secondary: #fdfdfd; /* Bianco calce */
+            --accent: #2a9d8f; /* Verde ulivo */
+            --text: #333;
+        }
+
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #f4f7f6; color: var(--text); }
         
-        .header-spacer { height: 120px; }
+        /* Navigazione Chiara */
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: white; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: var(--primary); text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        
+        .header-spacer { height: 100px; }
+        
+        /* Hero Banner */
+        .hero { 
+            background: linear-gradient(rgba(0,119,182,0.7), rgba(0,119,182,0.7)), url('https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover; background-position: center;
+            height: 300px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-bottom: 40px;
+        }
+        .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+
         .container { padding: 20px; max-width: 1200px; margin: 0 auto; }
         
-        h1 { color: #d4af37; text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
-        .intro-text { text-align: center; margin-bottom: 50px; opacity: 0.8; }
-
-        /* Stile Titoli Sezioni */
-        .category-header { 
-            background: #d4af37; color: black; padding: 15px 25px; 
-            border-radius: 8px; margin: 50px 0 25px; 
-            display: inline-block; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+        /* Titoli Sezioni Solari */
+        .section-header { 
+            border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin: 50px 0 25px; 
+            color: var(--primary); text-transform: uppercase; font-weight: bold; font-size: 1.5rem;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         
-        .card { 
-            background: #1e1e1e; border-radius: 12px; padding: 20px;
-            text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s ease; display: block;
-        }
-        .card:hover { border-color: #d4af37; background: #252525; transform: translateY(-5px); }
-        .card strong { color: #d4af37; display: block; font-size: 1.1rem; margin-bottom: 5px; }
-        .card span { font-size: 0.8rem; opacity: 0.6; display: block; }
-        .card .btn-info { margin-top: 15px; font-size: 0.7rem; font-weight: bold; color: #d4af37; text-decoration: underline; }
-
-        .footer-note { text-align: center; margin-top: 60px; padding: 30px; border-top: 1px solid rgba(212,175,55,0.3); font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="chi-siamo.html">Chi Siamo</a>
-    <a href="trasparenza.html">Trasparenza</a>
-    <a href="turismo.html">Turismo</a>
-    <a href="convenzioni.html">Convenzioni</a>
-    <a href="offerta-ricettiva.html">Ospitalità</a>
-    <a href="eventi.html">Eventi</a>
-    <a href="unisciti.html">Unisciti</a>
-</nav>
-
-<div class="header-spacer"></div>
-
-<div class="container">
-    <h1>Dove Dormire</h1>
-    <p class="intro-text">Guida ufficiale suddivisa per categoria delle strutture ricettive a Ostuni.</p>
-
-    <div class="category-header">Hotel & Resort</div>
-    <div class="grid">
-        <a href="https://www.google.com/search?q=Hotel+Monte+Sarago+Ostuni" target="_blank" class="card">
-            <strong>Hotel Monte Sarago</strong>
-            <span>Corso Mazzini</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=Ostuni+Palace+Hotel" target="_blank" class="card">
-            <strong>Ostuni Palace</strong>
-            <span>Corso Vittorio Emanuele</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=La+Terra+Hotel+Ostuni" target="_blank" class="card">
-            <strong>Hotel La Terra</strong>
-            <span>Centro Storico</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-    </div>
-
-    <div class="category-header">B&B e Dimore Storiche</div>
-    <div class="grid">
-        <a href="https://www.google.com/search?q=B%26B+Aria+Antica+Ostuni" target="_blank" class="card">
-            <strong>Aria Antica</strong>
-            <span>C.da Fiorentino</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=Cà+Giò+Ostuni" target="_blank" class="card">
-            <strong>Cà Giò</strong>
-            <span>Via de Landria</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=B%26B+dei+Colli+Ostuni" target="_blank" class="card">
-            <strong>B&B dei Colli</strong>
-            <span>Zona Panoramica</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-    </div>
-
-    <div class="category-header">Masserie & Agriturismi</div>
-    <div class="grid">
-        <a href="https://www.google.com/search?q=Masseria+Salinola+Ostuni" target="_blank" class="card">
-            <strong>Masseria Salinola</strong>
-            <span>C.da Salinola</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=Masseria+Asciano+Ostuni" target="_blank" class="card">
-            <strong>Masseria Asciano</strong>
-            <span>C.da Lardagnano</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=Masseria+Cervarolo+Ostuni" target="_blank" class="card">
-            <strong>Masseria Cervarolo</strong>
-            <span>C.da Cervarolo</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-    </div>
-
-    <div class="category-header">Case Vacanze</div>
-    <div class="grid">
-        <a href="https://www.google.com/search?q=Adriatica+Residence+Ostuni" target="_blank" class="card">
-            <strong>Adriatica Residence</strong>
-            <span>Villanova</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=21mq+Suite+Home+Ostuni" target="_blank" class="card">
-            <strong>21mq Suite Home</strong>
-            <span>Centro Storico</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-        <a href="https://www.google.com/search?q=La+Piana+degli+Ulivi+Ostuni" target="_blank" class="card">
-            <strong>La Piana degli Ulivi</strong><span>C.da Li Cuti</span>
-            <div class="btn-info">VEDI DETTAGLI E FOTO</div>
-        </a>
-    </div>
-
-    <div class="footer-note">
-        <p>L'elenco è basato sui dati ufficiali del registro regionale e dei soci Pro Loco.</p>
-        <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" style="color: #d4af37;">Consulta il registro regionale integrale (100+ strutture)</a>
-    </div>
-</div>
-
-</body>
-</html>
+        /* Card Moderne
