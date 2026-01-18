@@ -6,33 +6,58 @@
     <title>Ospitalità - Pro Loco Ostuni APS</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #121212; color: white; line-height: 1.6; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #121212; color: white; }
         nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.95); display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; border-bottom: 2px solid #d4af37; }
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        
         .header-spacer { height: 120px; }
         .container { padding: 20px; max-width: 1200px; margin: 0 auto; }
-        
-        h1 { color: #d4af37; text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
-        .intro-text { text-align: center; margin-bottom: 50px; opacity: 0.8; }
+        h1 { color: #d4af37; text-align: center; }
+        .cat-title { background: #d4af37; color: black; padding: 10px 20px; border-radius: 5px; margin: 40px 0 20px; display: inline-block; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .card { background: #1e1e1e; border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-decoration: none; color: white; display: block; }
+        .card:hover { border-color: #d4af37; }
+        .card strong { color: #d4af37; display: block; }
+        .card span { font-size: 0.8rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
 
-        /* Stile Titoli Sezioni */
-        .category-header { 
-            background: #d4af37; color: black; padding: 15px 25px; 
-            border-radius: 8px; margin: 50px 0 25px; 
-            display: inline-block; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
-        }
+<nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi Siamo</a>
+    <a href="trasparenza.html">Trasparenza</a>
+    <a href="turismo.html">Turismo</a>
+    <a href="convenzioni.html">Convenzioni</a>
+    <a href="offerta-ricettiva.html">Ospitalità</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="unisciti.html">Unisciti</a>
+</nav>
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        
-        .card { 
-            background: #1e1e1e; border-radius: 12px; padding: 20px;
-            text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s ease; display: block;
-        }
-        .card:hover { border-color: #d4af37; background: #252525; transform: translateY(-5px); }
-        .card strong { color: #d4af37; display: block; font-size: 1.1rem; margin-bottom: 5px; }
-        .card span { font-size: 0.8rem; opacity: 0.6; display: block; }
-        .card .btn-info { margin-top: 15px; font-size: 0.7rem; font-weight: bold; color: #d4af37; text-decoration: underline; }
+<div class="header-spacer"></div>
 
-        .footer
+<div class="container">
+    <h1>Ospitalità</h1>
+
+    <div class="cat-title">HOTEL</div>
+    <div class="grid" id="lista-hotel">
+        <a href="https://www.google.com/search?q=Hotel+Monte+Sarago+Ostuni" target="_blank" class="card"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></a>
+        </div>
+
+    <div class="cat-title">B&B</div>
+    <div class="grid" id="lista-bb">
+        <a href="https://www.google.com/search?q=B%26B+Aria+Antica+Ostuni" target="_blank" class="card"><strong>Aria Antica</strong><span>C.da Fiorentino</span></a>
+        </div>
+
+    <div class="cat-title">AGRITURISMI</div>
+    <div class="grid" id="lista-agriturismi">
+        <a href="https://www.google.com/search?q=Masseria+Salinola+Ostuni" target="_blank" class="card"><strong>Masseria Salinola</strong><span>C.da Salinola</span></a>
+        </div>
+
+    <div class="cat-title">CASE VACANZE</div>
+    <div class="grid" id="lista-case">
+        <a href="https://www.google.com/search?q=Adriatica+Residence+Ostuni" target="_blank" class="card"><strong>Adriatica Residence</strong><span>Villanova</span></a>
+        </div>
+
+</div>
+</body>
+</html>
