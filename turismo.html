@@ -11,44 +11,42 @@
         nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
         .header-spacer { height: 75px; }
 
-        /* BANNER PRINCIPALE CON LA TUA FOTO */
+        /* BANNER - Se la foto 20260118_181129.jpg non dovesse caricarsi, userà un blu professionale */
         .hero-turismo { 
-            height: 50vh; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('20260118_181129.jpg');
+            height: 45vh; 
+            background: #0984e3 linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('20260118_181129.jpg');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center; color: white;
         }
-        .hero-turismo h1 { font-size: 3.5rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; font-weight: 700; text-transform: uppercase; }
+        .hero-turismo h1 { font-size: 3.5rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; font-weight: 700; }
 
-        .container { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
-        .intro-p { text-align: center; font-size: 1.1rem; margin-bottom: 50px; color: #636e72; }
+        .container { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
 
         .itinerary-card { 
-            display: grid; grid-template-columns: 1fr; background: #f8f9fa; 
-            border-radius: 25px; overflow: hidden; border: 1px solid #eee;
-            margin-bottom: 40px; transition: 0.3s;
+            display: flex; flex-direction: column; background: #f8f9fa; 
+            border-radius: 20px; overflow: hidden; border: 1px solid #eee;
+            margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        @media (min-width: 768px) { .itinerary-card { grid-template-columns: 380px 1fr; } }
+        @media (min-width: 768px) { .itinerary-card { flex-direction: row; height: 350px; } }
 
-        .img-box { min-height: 300px; background-size: cover; background-position: center; }
+        .img-box { min-height: 250px; background-size: cover; background-position: center; flex: 1; }
         
-        /* COLLEGAMENTO AI TUOI FILE E IMMAGINI FISSE */
-        .img-alto { background-image: url('2021-08-04.jpg'); } /* La tua foto con l'ulivo e la città sullo sfondo */
-        .img-rosone { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Cattedrale_di_Ostuni_02.jpg/800px-Cattedrale_di_Ostuni_02.jpg'); } 
+        /* IMMAGINI DA FONTI SICURE (WIKIPEDIA) */
+        .img-panorama { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Ostuni_landscape.jpg/800px-Ostuni_landscape.jpg'); } 
+        .img-rosone { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Cattedrale_di_Ostuni_02.jpg/512px-Cattedrale_di_Ostuni_02.jpg'); }
         .img-mare { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Costa_merlata.jpg/800px-Costa_merlata.jpg'); }
 
-        .content-box { padding: 35px; text-align: left; }
-        .content-box h3 { color: #0984e3; margin-top: 0; font-size: 1.7rem; font-weight: 700; }
-        .content-box ul { padding-left: 20px; color: #636e72; line-height: 1.8; }
+        .content-box { padding: 30px; flex: 1.5; text-align: left; overflow-y: auto; }
+        .content-box h3 { color: #0984e3; margin-top: 0; font-size: 1.5rem; }
+        .content-box ul { padding-left: 20px; color: #636e72; }
         
         .btn-tour { 
             display: inline-block; background: #0984e3; color: white; 
-            text-decoration: none; padding: 14px 30px; border-radius: 50px; 
-            font-weight: bold; margin-top: 20px; transition: 0.3s;
+            text-decoration: none; padding: 12px 25px; border-radius: 50px; 
+            font-weight: bold; margin-top: 10px;
         }
-        .btn-tour:hover { background: #00cec9; transform: translateY(-3px); }
 
-        footer { background: #0984e3; color: white; padding: 40px; margin-top: 60px; text-align: center; }
+        footer { background: #0984e3; color: white; padding: 30px; text-align: center; }
     </style>
 </head>
 <body>
@@ -65,61 +63,57 @@
 <div class="header-spacer"></div>
 
 <div class="hero-turismo">
-    <h1>Itinerari</h1>
+    <h1>Turismo</h1>
 </div>
 
 <div class="container">
-    <p class="intro-p">Esplora la Città Bianca: dai panorami del borgo antico alle acque cristalline della costa.</p>
-
+    
     <div class="itinerary-card">
-        <div class="img-box img-alto"></div>
+        <div class="img-box img-panorama"></div>
         <div class="content-box">
             <h3>📍 Il Borgo Antico</h3>
-            <p>Passeggiata nel cuore della "Terra", ammirando la cascata di case bianche dalla piana degli ulivi.</p>
+            <p>Ammira la "Città Bianca" in tutto il suo splendore, un labirinto di calce e storia.</p>
             <ul>
-                <li>Piazza della Libertà e l'Obelisco di Sant'Oronzo</li>
-                <li>Le caratteristiche "nchianate" del centro storico</li>
-                <li>Passeggiata lungo le antiche mura aragonesi</li>
-                <li>Scorci e vicoli imbiancati a calce viva</li>
+                <li>Piazza della Libertà e Obelisco barocco</li>
+                <li>Le mura aragonesi e i torrioni</li>
+                <li>Scorci panoramici sulla Valle d'Itria</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Ostuni+Centro+Storico" target="_blank" class="btn-tour">APRI MAPPA</a>
+            <a href="https://maps.google.com/?q=Ostuni+Centro+Storico" target="_blank" class="btn-tour">MAPPA CENTRO</a>
         </div>
     </div>
 
     <div class="itinerary-card">
         <div class="img-box img-rosone"></div>
         <div class="content-box">
-            <h3>🏛️ Arte e Storia</h3>
-            <p>Il cuore monumentale della città, dominato dalla maestosa Cattedrale e dal suo celebre Rosone.</p>
+            <h3>🏛️ La Cattedrale</h3>
+            <p>Il cuore nobile di Ostuni, dove risplende il Rosone a 24 raggi, tra i più grandi al mondo.</p>
             <ul>
                 <li>Cattedrale di Santa Maria Assunta</li>
-                <li>Il Rosone gotico a 24 raggi</li>
-                <li>Il Museo della Civiltà Preclassiche</li>
-                <li>L'Arco Scoppa e i palazzi nobiliari</li>
+                <li>Il Museo Civico (Donna di Ostuni)</li>
+                <li>L'Arco Scoppa e Via Cattedrale</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Cattedrale+di+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI</a>
+            <a href="https://maps.google.com/?q=Cattedrale+di+Ostuni" target="_blank" class="btn-tour">DETTAGLI ARTE</a>
         </div>
     </div>
 
     <div class="itinerary-card">
         <div class="img-box img-mare"></div>
         <div class="content-box">
-            <h3>🌊 Marina di Ostuni</h3>
-            <p>17 km di costa con spiagge pluripremiate Bandiera Blu e calette incontaminate.</p>
+            <h3>🌊 Costa e Marina</h3>
+            <p>17 km di litorale Bandiera Blu, con acque cristalline e riserve naturali protette.</p>
             <ul>
-                <li>Il porticciolo di Villanova</li>
-                <li>Le calette naturali di Costa Merlata</li>
-                <li>La Riserva Naturale di Torre Pozzelle</li>
-                <li>Spiaggia del Pilone e dune costiere</li>
+                <li>Porto di Villanova e Torre Pozzelle</li>
+                <li>Le calette sabbiose di Costa Merlata</li>
+                <li>Le dune secolari del Pilone</li>
             </ul>
-            <a href="https://www.google.it/maps/search/Spiagge+Ostuni" target="_blank" class="btn-tour">ESPLORA IL MARE</a>
+            <a href="https://maps.google.com/?q=Spiagge+Ostuni" target="_blank" class="btn-tour">MAPPA MARE</a>
         </div>
     </div>
+
 </div>
 
 <footer>
-    <p><strong>Pro Loco Ostuni - La Città Bianca</strong></p>
-    <p>Ufficio Informazioni Turistiche - Corso Mazzini</p>
+    <p><strong>Pro Loco Ostuni APS</strong> - Piazza Libertà</p>
 </footer>
 
 </body>
