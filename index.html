@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Loco Ostuni</title>
+    <title>Pro Loco Ostuni APS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
-        .bg {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('2021-08-04.webp');
-            height: 100vh; background-position: center; background-size: cover;
-            display: flex; align-items: center; justify-content: center; color: white;
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Montserrat', sans-serif; }
+        .bg-image {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('2021-08-04.webp');
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .card { background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.3); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .tag { color: #d4af37; font-weight: bold; display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <div class="bg">
-        <div class="card">
+    <div class="bg-image">
+        <div class="glass-card">
+            <span class="tag">ASSOCIATA UNPLI</span>
             <h1>PRO LOCO OSTUNI</h1>
-            <p>Sito in costruzione - APS Iscritta al RUNTS</p>
+            <p>Sito in costruzione · APS Iscritta al RUNTS</p>
         </div>
     </div>
 </body>
