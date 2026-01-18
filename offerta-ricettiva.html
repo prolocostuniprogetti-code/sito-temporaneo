@@ -9,40 +9,23 @@
         body, html { margin: 0; padding: 0; min-height: 100%; font-family: 'Montserrat', sans-serif; color: white; background: #1a1a1a; }
         nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000; }
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        
         .header-spacer { height: 120px; }
         .content { padding: 20px; max-width: 1100px; margin: 0 auto; }
+        h1 { color: #d4af37; text-align: center; }
+        .section-title { background: #d4af37; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-top: 40px; display: inline-block; text-transform: uppercase; }
         
-        h1 { color: #d4af37; text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
+        .hotel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 15px; margin-top: 20px; }
         
-        .section-title { 
-            background: #d4af37; color: black; padding: 10px 20px; 
-            border-radius: 5px; font-weight: bold; margin-top: 40px;
-            display: inline-block; text-transform: uppercase; letter-spacing: 1px;
-        }
-
-        /* Griglia compatta per contenere centinaia di nomi */
-        .hotel-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-            gap: 10px; margin-top: 20px; 
-        }
-
+        /* Card Cliccabile */
         .hotel-card {
-            background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;
+            background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+            text-decoration: none; color: white; display: block;
         }
-        .hotel-card:hover { border-color: #d4af37; background: rgba(255,255,255,0.1); }
-        .hotel-card strong { color: #d4af37; display: block; font-size: 0.95rem; }
-        .hotel-card span { font-size: 0.75rem; opacity: 0.7; }
-
-        .btn-regione {
-            display: block; width: fit-content; margin: 50px auto;
-            background: transparent; color: #d4af37; border: 2px solid #d4af37;
-            padding: 15px 30px; border-radius: 50px; text-decoration: none;
-            font-weight: bold; transition: 0.3s;
-        }
-        .btn-regione:hover { background: #d4af37; color: black; }
+        .hotel-card:hover { border-color: #d4af37; background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+        .hotel-card strong { color: #d4af37; display: block; font-size: 1rem; margin-bottom: 5px; }
+        .hotel-card span { font-size: 0.75rem; opacity: 0.7; display: block; }
+        .view-map { font-size: 0.7rem; color: #d4af37; text-transform: uppercase; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -61,52 +44,51 @@
 <div class="header-spacer"></div>
 
 <div class="content">
-    <h1>Guida all'Ospitalità</h1>
-    <p style="text-align:center; opacity:0.8;">Elenco ufficiale delle strutture ricettive di Ostuni (Dati Registro Regionale Puglia)</p>
-
-    <div class="section-title">Hotel, Resort & Villaggi</div>
+    <h1>Dove Dormire</h1>
+    
+    <div class="section-title">Hotel & Resort</div>
     <div class="hotel-grid">
-        <div class="hotel-card"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></div>
-        <div class="hotel-card"><strong>Relais La Sommità</strong><span>Centro Storico</span></div>
-        <div class="hotel-card"><strong>Ostuni Rosa Marina Resort</strong><span>Litorale Adriatico</span></div>
-        <div class="hotel-card"><strong>Hotel Incanto</strong><span>Via dei Colli</span></div>
-        <div class="hotel-card"><strong>Città Bianca Resort</strong><span>Contrada Turco</span></div>
-        <div class="hotel-card"><strong>Paragon 700 Boutique</strong><span>Largo Bixio Continelli</span></div>
-        <div class="hotel-card"><strong>Hotel Ostuni Palace</strong><span>Corso Vittorio Emanuele</span></div>
-        <div class="hotel-card"><strong>La Terra Hotel</strong><span>Vico Castello</span></div>
+        <a href="https://www.google.com/maps/search/Hotel+Monte+Sarago+Ostuni" target="_blank" class="hotel-card">
+            <strong>Hotel Monte Sarago</strong>
+            <span>Corso Mazzini</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
+        <a href="https://www.google.com/maps/search/Ostuni+Rosa+Marina+Resort" target="_blank" class="hotel-card">
+            <strong>Rosa Marina Resort</strong>
+            <span>Litorale Adriatico</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
+        <a href="https://www.google.com/maps/search/Relais+La+Sommità+Ostuni" target="_blank" class="hotel-card">
+            <strong>Relais La Sommità</strong>
+            <span>Centro Storico</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
     </div>
 
     <div class="section-title">Masserie & Agriturismi</div>
     <div class="hotel-grid">
-        <div class="hotel-card"><strong>Masseria Salinola</strong><span>C.da Salinola</span></div>
-        <div class="hotel-card"><strong>Masseria Asciano</strong><span>C.da Lardagnano</span></div>
-        <div class="hotel-card"><strong>Masseria Le Carrube</strong><span>S.S. 16 km 873</span></div>
-        <div class="hotel-card"><strong>Tenuta Amostuni</strong><span>C.da Tamburroni</span></div>
-        <div class="hotel-card"><strong>Masseria Cervarolo</strong><span>C.da Cervarolo</span></div>
-        <div class="hotel-card"><strong>Masseria Valente</strong><span>S.P. Ostuni-Brindisi</span></div>
-        <div class="hotel-card"><strong>Masseria Il Frantoio</strong><span>S.S. 16 km 870</span></div>
-        <div class="hotel-card"><strong>Masseria Le Monache</strong><span>C.da Specchiarica</span></div>
+        <a href="https://www.google.com/maps/search/Masseria+Salinola+Ostuni" target="_blank" class="hotel-card">
+            <strong>Masseria Salinola</strong>
+            <span>C.da Salinola</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
+        <a href="https://www.google.com/maps/search/Masseria+Asciano+Ostuni" target="_blank" class="hotel-card">
+            <strong>Masseria Asciano</strong>
+            <span>C.da Lardagnano</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
+        <a href="https://www.google.com/maps/search/Tenuta+Amostuni" target="_blank" class="hotel-card">
+            <strong>Tenuta Amostuni</strong>
+            <span>C.da Tamburroni</span>
+            <div class="view-map">Vedi su Mappa →</div>
+        </a>
     </div>
 
-    <div class="section-title">B&B e Case Vacanze (Esempi Principali)</div>
-    <div class="hotel-grid">
-        <div class="hotel-card"><strong>Aria Antica</strong><span>C.da Fiorentino</span></div>
-        <div class="hotel-card"><strong>Cà Giò</strong><span>Via de Landria</span></div>
-        <div class="hotel-card"><strong>Cà Bellavista</strong><span>Via Bixio</span></div>
-        <div class="hotel-card"><strong>B&B dei Colli</strong><span>Zona Panoramica</span></div>
-        <div class="hotel-card"><strong>21mq Suite Home</strong><span>Vicolo Scalese</span></div>
-        <div class="hotel-card"><strong>Adriatica Residence</strong><span>Villanova</span></div>
-        <div class="hotel-card"><strong>Casa Eduardo</strong><span>Zona Campagna</span></div>
-        <div class="hotel-card"><strong>Zaffiro Azzurro</strong><span>Rione Terra</span></div>
+    <div style="margin-top: 50px; text-align: center; background: rgba(212,175,55,0.1); padding: 30px; border-radius: 20px;">
+        <h3>Cerchi un'altra struttura?</h3>
+        <p>A Ostuni sono presenti oltre 100 strutture certificate.</p>
+        <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" style="color: #d4af37; font-weight: bold; text-decoration: none; border: 1px solid #d4af37; padding: 10px 20px; border-radius: 50px;">Apri Registro Regionale Completo</a>
     </div>
-
-    <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" class="btn-regione">
-        CONSULTA IL REGISTRO REGIONALE COMPLETO (100+)
-    </a>
-
-    <p style="text-align:center; font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">
-        Elenco in fase di popolamento. Se la tua struttura manca, contatta la Pro Loco.
-    </p>
 </div>
 
 </body>
