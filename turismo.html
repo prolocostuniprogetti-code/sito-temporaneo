@@ -11,7 +11,7 @@
         nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
         .header-spacer { height: 75px; }
 
-        /* BANNER CON LA TUA NUOVA FOTO PANORAMICA */
+        /* BANNER PANORAMICO CON LA TUA FOTO */
         .hero-turismo { 
             height: 50vh; 
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('20260118_181129.jpg');
@@ -28,14 +28,14 @@
             border-radius: 25px; overflow: hidden; border: 1px solid #eee;
             margin-bottom: 40px; transition: 0.3s;
         }
-        @media (min-width: 768px) { .itinerary-card { grid-template-columns: 350px 1fr; } }
+        @media (min-width: 768px) { .itinerary-card { grid-template-columns: 380px 1fr; } }
 
-        .img-box { min-height: 250px; background-size: cover; background-position: center; }
+        .img-box { min-height: 280px; background-size: cover; background-position: center; }
         
-        /* Immagini specifiche degli itinerari */
-        .img-centro { background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80'); } /* Foto del Rosone */
-        .img-cultura { background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80'); } /* Cultura/Musei */
-        .img-mare { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'); } /* Mare */
+        /* FOTO TROVATE IN RETE */
+        .img-alto { background-image: url('http://googleusercontent.com/image_collection/image_retrieval/12946183061872526730_0'); } 
+        .img-rosone { background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80'); }
+        .img-mare { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'); }
 
         .content-box { padding: 30px; text-align: left; }
         .content-box h3 { color: #0984e3; margin-top: 0; font-size: 1.6rem; font-weight: 700; }
@@ -69,48 +69,48 @@
 </div>
 
 <div class="container">
-    <p class="intro-p">Scopri i percorsi più suggestivi della Città Bianca, tra storia, arte e mare.</p>
+    <p class="intro-p">Scopri la magia della Città Bianca attraverso i suoi itinerari più iconici.</p>
 
     <div class="itinerary-card">
-        <div class="img-box img-centro"></div>
+        <div class="img-box img-alto"></div>
         <div class="content-box">
             <h3>📍 Il Borgo Antico</h3>
-            <p>Passeggiata nel cuore della "Terra", tra vicoli bianchi e architettura medievale.</p>
+            <p>Ammira lo skyline unico di Ostuni, la cascata di case bianche che domina la valle.</p>
             <ul>
-                <li>Piazza della Libertà e Obelisco di Sant'Oronzo</li>
-                <li>Via Cattedrale e il celebre Rosone</li>
-                <li>Le antiche Mura Aragonesi</li>
-                <li>Porta Nova e i belvedere sulla piana degli ulivi</li>
+                <li>Piazza della Libertà e l'Obelisco di Sant'Oronzo</li>
+                <li>Le caratteristiche "nchianate" (salite)</li>
+                <li>Le antiche mura difensive e i torrioni</li>
+                <li>Scorci panoramici mozzafiato</li>
             </ul>
-            <a href="https://www.google.com/maps/search/Cattedrale+Ostuni" target="_blank" class="btn-tour">APRI MAPPA</a>
+            <a href="https://www.google.com/maps/search/Centro+Storico+Ostuni" target="_blank" class="btn-tour">APRI MAPPA</a>
         </div>
     </div>
 
     <div class="itinerary-card">
-        <div class="img-box img-cultura"></div>
+        <div class="img-box img-rosone"></div>
         <div class="content-box">
-            <h3>🏛️ Storia e Tradizioni</h3>
-            <p>Un itinerario dedicato ai tesori archeologici e alle chiese barocche.</p>
+            <h3>🏛️ Arte e Storia</h3>
+            <p>Un percorso dedicato ai simboli cristiani e al celebre Rosone a 24 raggi.</p>
             <ul>
-                <li>Museo Civico (La Donna di Ostuni)</li>
-                <li>Chiesa di San Francesco d'Assisi</li>
-                <li>Chiesa dello Spirito Santo</li>
-                <li>Il Parco Archeologico di Santa Maria di Agnano</li>
+                <li>La Cattedrale di Santa Maria Assunta</li>
+                <li>Il Museo della Civiltà Preclassiche</li>
+                <li>La Chiesa di San Vito Martire</li>
+                <li>L'Arco Scoppa e i Palazzi del Borgo</li>
             </ul>
-            <a href="https://www.google.com/maps/search/Museo+Civico+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI</a>
+            <a href="https://www.google.com/maps/search/Cattedrale+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI</a>
         </div>
     </div>
 
     <div class="itinerary-card">
         <div class="img-box img-mare"></div>
         <div class="content-box">
-            <h3>🌊 Marina di Ostuni</h3>
-            <p>Esplora i 17 km di litorale Bandiera Blu, tra porticcioli e riserve naturali.</p>
+            <h3>🌊 La Marina di Ostuni</h3>
+            <p>17 km di costa cristallina premiata con la Bandiera Blu.</p>
             <ul>
-                <li>Villanova e il porticciolo turistico</li>
-                <li>Le calette di Costa Merlata</li>
-                <li>Riserva Naturale di Torre Pozzelle</li>
-                <li>Spiaggia del Pilone e le dune costiere</li>
+                <li>Il porticciolo di Villanova</li>
+                <li>Le calette naturali di Costa Merlata</li>
+                <li>La riserva protetta di Torre Pozzelle</li>
+                <li>Dune costiere e spiagge Bandiera Blu</li>
             </ul>
             <a href="https://www.google.com/maps/search/Spiagge+Ostuni" target="_blank" class="btn-tour">ESPLORA LA COSTA</a>
         </div>
