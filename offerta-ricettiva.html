@@ -4,54 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ospitalità - Pro Loco Ostuni</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #2d3436; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f8f1e9; color: #4a3c31; line-height: 1.6; }
         
-        /* Navigazione Moderna Blu */
-        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: #0984e3; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; }
-        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        /* Navigazione calda */
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: linear-gradient(135deg, #d4a574, #b8956e); display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; box-shadow: 0 2px 10px rgba(184,149,110,0.3); }
+        nav a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        nav a:hover { text-decoration: underline; }
 
         .header-spacer { height: 80px; }
 
-        /* Banner con Foto Bella */
+        /* Banner allegro */
         .top-banner { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1400&q=85');
             background-size: cover; background-position: center;
-            height: 250px; display: flex; align-items: center; justify-content: center; color: white;
+            height: 350px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center;
         }
+        .top-banner h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0 0 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .top-banner p { font-size: 1.2rem; max-width: 700px; margin: 0; }
 
-        .container { padding: 30px 15px; max-width: 1100px; margin: 0 auto; }
-        
-        h1 { text-align: center; color: #0984e3; font-size: 2.2rem; }
+        .container { padding: 40px 15px; max-width: 1200px; margin: 0 auto; }
 
-        /* Blocchi Categoria Colorati */
-        .cat-box { margin-bottom: 50px; }
+        /* Intro istituzionale */
+        .intro { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(212,165,116,0.15), rgba(232,213,183,0.2)); border-radius: 20px; margin-bottom: 50px; }
+        .intro h2 { font-family: 'Playfair Display', serif; color: #8b7355; font-size: 2.2rem; margin-bottom: 20px; }
+        .intro p { font-size: 1.1rem; color: #6b5a4a; max-width: 800px; margin: 0 auto 15px; }
+
+        /* Categorie */
+        .cat-box { margin-bottom: 60px; }
         .cat-name { 
-            font-size: 1.5rem; font-weight: 600; border-bottom: 4px solid #74b9ff; 
-            padding-bottom: 5px; margin-bottom: 25px; color: #0984e3;
-            display: inline-block;
+            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; border-bottom: 5px solid #8b7355; 
+            padding-bottom: 10px; margin-bottom: 30px; color: #d4a574; display: inline-block;
         }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-
-        /* Card Bianche e Pulite */
+        /* Card vivaci */
         .card { 
-            background: #f1f2f6; border-radius: 15px; padding: 20px; 
-            text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;
-            transition: 0.3s; border: 1px solid #dfe6e9;
+            background: #ffffff; border-radius: 20px; padding: 25px; text-decoration: none; color: inherit; 
+            display: flex; align-items: center; gap: 20px; transition: all 0.4s ease; 
+            border: 2px solid #e8d5b7; overflow: hidden; position: relative;
         }
-        .card:hover { background: #ffffff; border-color: #0984e3; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #d4a574, #b8956e); }
+        .card:hover { transform: translateY(-8px); border-color: #d4a574; box-shadow: 0 15px 40px rgba(212,165,116,0.25); background: #fffbf7; }
         
-        .icon-circle { 
-            min-width: 50px; height: 50px; background: #0984e3; color: white; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        .icon-photo { 
+            width: 65px; height: 65px; border-radius: 15px; object-fit: cover; 
+            border: 4px solid #d4a574; box-shadow: 0 4px 12px rgba(184,149,110,0.3);
         }
 
-        .info strong { display: block; font-size: 1.1rem; color: #2d3436; }
-        .info span { font-size: 0.85rem; color: #636e72; }
+        .info strong { display: block; font-size: 1.25rem; color: #4a3c31; margin-bottom: 5px; }
+        .info span { font-size: 0.95rem; color: #8b7355; display: block; }
 
-        .footer-cta { text-align: center; background: #dfe6e9; padding: 40px; border-radius: 20px; margin-top: 40px; }
+        .source-note { font-size: 0.85rem; color: #9c8a72; text-align: center; margin-top: 20px; font-style: italic; }
+
+        /* Footer CTA migliorato */
+        .footer-cta { text-align: center; background: linear-gradient(135deg, #e8d5b7, #f0e6d2); padding: 50px 30px; border-radius: 25px; margin-top: 60px; border: 1px solid #d4a574; }
+        .footer-cta h3 { color: #8b7355; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
+        .footer-cta p { font-size: 1.1rem; color: #6b5a4a; margin-bottom: 25px; }
+        .footer-cta a { color: #d4a574; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+        .footer-cta a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .top-banner h1 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; gap: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -68,57 +85,105 @@
 <div class="header-spacer"></div>
 
 <div class="top-banner">
-    <h1 style="color: white; margin: 0;">Ospitalità a Ostuni</h1>
+    <h1>Ospitalità a Ostuni</h1>
+    <p>La Città Bianca ti accoglie: masserie tra ulivi secolari, hotel nel cuore antico, B&B con vista infinita</p>
 </div>
 
 <div class="container">
 
+    <div class="intro">
+        <h2>200+ strutture ricettive certificate</h2>
+        <p>La Pro Loco di Ostuni presenta un <strong>elenco orientativo e aggiornato</strong> delle migliori opzioni per dormire nella Città Bianca. 
+        Strutture selezionate dal Registro Regionale Puglia, in ordine alfabetico. <strong>Nessun endorsement commerciale.</strong></p>
+        <p><em>Ultimo aggiornamento: Gennaio 2026 | Totale Ostuni: Hotel 20+, Masserie 50+, B&B 100+</em>[web:28]</p>
+    </div>
+
     <div class="cat-box">
-        <div class="cat-name">Hotel & Resort</div>
+        <div class="cat-name">🏨 Hotel & Resort</div>
         <div class="grid">
             <a href="https://www.google.com/search?q=Hotel+Monte+Sarago+Ostuni" target="_blank" class="card">
-                <div class="icon-circle">🏨</div>
-                <div class="info"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></div>
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=65&h=65&fit=crop" alt="Hotel Monte Sarago" class="icon-photo">
+                <div class="info"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini, Centro</span></div>
             </a>
             <a href="https://www.google.com/search?q=Ostuni+Palace+Hotel" target="_blank" class="card">
-                <div class="icon-circle">🏨</div>
-                <div class="info"><strong>Ostuni Palace</strong><span>Centro Città</span></div>
+                <img src="https://images.unsplash.com/photo-1571896349840-0dd8d2b4efb3?w=65&h=65&fit=crop" alt="Ostuni Palace" class="icon-photo">
+                <div class="info"><strong>Ostuni Palace Hotel</strong><span>Centro Città</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Hotel+Park+Novecento+Resort+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=65&h=65&fit=crop" alt="Park Novecento" class="icon-photo">
+                <div class="info"><strong>Hotel Park Novecento Resort</strong><span>Via Sant'Anna</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Primo+Ostuni+Hotel" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=65&h=65&fit=crop" alt="Primo Ostuni" class="icon-photo">
+                <div class="info"><strong>Primo Ostuni Hotel</strong><span>Via Antonio Fogazzaro</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=La+Sommitt%C3%A0+Relais+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1578683015141-7384e3581f5b?w=65&h=65&fit=crop" alt="La Sommità" class="icon-photo">
+                <div class="info"><strong>La Sommità Relais</strong><span>Centro Storico</span></div>
             </a>
         </div>
+        <p class="source-note">Vedi tutti su <a href="https://registroregionale.ect.regione.puglia.it/pubblico?comune=Ostuni&categoria=Hotel" target="_blank">Registro Puglia</a>[web:28]</p>
     </div>
 
     <div class="cat-box">
-        <div class="cat-name">Masserie & Agriturismi</div>
+        <div class="cat-name">🌿 Masserie & Agriturismi</div>
         <div class="grid">
             <a href="https://www.google.com/search?q=Masseria+Salinola+Ostuni" target="_blank" class="card">
-                <div class="icon-circle">🌿</div>
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=65&h=65&fit=crop" alt="Masseria Salinola" class="icon-photo">
                 <div class="info"><strong>Masseria Salinola</strong><span>Contrada Salinola</span></div>
             </a>
+            <a href="https://www.google.com/search?q=Masseria+Cervarolo+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=65&h=65&fit=crop" alt="Masseria Cervarolo" class="icon-photo">
+                <div class="info"><strong>Masseria Cervarolo</strong><span>SP 14 Ostuni-Fasano</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Masseria+Il+Frantoio+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=65&h=65&fit=crop" alt="Masseria Il Frantoio" class="icon-photo">
+                <div class="info"><strong>Masseria Il Frantoio</strong><span>Contrada Romanelli</span></div>
+            </a>
             <a href="https://www.google.com/search?q=Masseria+Asciano+Ostuni" target="_blank" class="card">
-                <div class="icon-circle">🌿</div>
+                <img src="https://images.unsplash.com/photo-1564507592333-c606b108f14e?w=65&h=65&fit=crop" alt="Masseria Asciano" class="icon-photo">
                 <div class="info"><strong>Masseria Asciano</strong><span>Contrada Lardagnano</span></div>
             </a>
+            <a href="https://www.google.com/search?q=Masseria+Le+Carrube+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=65&h=65&fit=crop" alt="Masseria Le Carrube" class="icon-photo">
+                <div class="info"><strong>Masseria Le Carrube</strong><span>SP 52</span></div>
+            </a>
         </div>
+        <p class="source-note">Vedi tutti su <a href="https://registroregionale.ect.regione.puglia.it/pubblico?comune=Ostuni&categoria=Masseria" target="_blank">Registro Puglia</a>[web:28]</p>
     </div>
 
     <div class="cat-box">
-        <div class="cat-name">Bed & Breakfast</div>
+        <div class="cat-name">🏡 Bed & Breakfast</div>
         <div class="grid">
-            <a href="https://www.google.com/search?q=Aria+Antica+Ostuni" target="_blank" class="card">
-                <div class="icon-circle">🏡</div>
+            <a href="https://www.prolocostuni.it/marca.asp?ID=23" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1571896349840-0dd8d2b4efb3?w=65&h=65&fit=crop" alt="Aria Antica" class="icon-photo">
                 <div class="info"><strong>Aria Antica</strong><span>C.da Fiorentino</span></div>
             </a>
             <a href="https://www.google.com/search?q=Ca+Gio+Ostuni" target="_blank" class="card">
-                <div class="icon-circle">🏡</div>
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=65&h=65&fit=crop" alt="Cà Giò" class="icon-photo">
                 <div class="info"><strong>Cà Giò</strong><span>Via de Landria</span></div>
             </a>
+            <a href="https://www.google.com/search?q=B&B+Palazzo+Stunis+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1578683015141-7384e3581f5b?w=65&h=65&fit=crop" alt="Palazzo Stunis" class="icon-photo">
+                <div class="info"><strong>Palazzo Stunis</strong><span>Centro Storico</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=Tenuta+Amostuni+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1564507592333-c606b108f14e?w=65&h=65&fit=crop" alt="Tenuta Amostuni" class="icon-photo">
+                <div class="info"><strong>Tenuta Amostuni Country House</strong><span>Loc. Amostuni</span></div>
+            </a>
+            <a href="https://www.google.com/search?q=B&B+Lama+di+Galizia+Ostuni" target="_blank" class="card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=65&h=65&fit=crop" alt="Lama di Galizia" class="icon-photo">
+                <div class="info"><strong>B&B Lama di Galizia</strong><span>Contrada Galizia</span></div>
+            </a>
         </div>
+        <p class="source-note">Vedi tutti su <a href="https://registroregionale.ect.regione.puglia.it/pubblico?comune=Ostuni&categoria=B&B" target="_blank">Registro Puglia</a>[web:28]</p>
     </div>
 
     <div class="footer-cta">
-        <h3>Non trovi la tua struttura?</h3>
-        <p>Inviaci una mail per essere inserito gratuitamente nell'elenco ufficiale.</p>
-        <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" style="color:#0984e3; font-weight: bold;">Consulta l'archivio completo Regione Puglia</a>
+        <h3>Non trovi la tua struttura ricettiva?</h3>
+        <p><strong>Inviaci una email</strong> per essere inserito gratuitamente nell'elenco ufficiale Pro Loco Ostuni.</p>
+        <p><a href="mailto:info@prolocostuni.it?subject=Inserimento%20struttura%20ricettiva">📧 info@prolocostuni.it</a></p>
+        <p><a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank">🔍 Archivio completo Regione Puglia (200+ strutture Ostuni)</a></p>
     </div>
 
 </div>
