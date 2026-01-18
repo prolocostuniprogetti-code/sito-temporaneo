@@ -3,56 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo - Pro Loco Ostuni "La Città Bianca"</title>
+    <title>Turismo - Pro Loco Ostuni</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #2d3436; }
-        
-        /* Navigazione Blu */
-        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: #0984e3; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #2d3436; }
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: #0984e3; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; }
         nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .header-spacer { height: 75px; }
 
-        .header-spacer { height: 70px; }
-
-        /* Banner Turismo */
+        /* Banner con la tua foto corretta */
         .hero-turismo { 
-            height: 40vh; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('2021-08-04.webp');
+            height: 45vh; 
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('2021-08-04.webp');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center; color: white;
         }
-        .hero-turismo h1 { font-size: 3rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); margin: 0; }
+        .hero-turismo h1 { font-size: 3.5rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; font-weight: 700; }
 
         .container { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+        .intro-p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: #636e72; }
 
-        h2 { color: #0984e3; border-left: 5px solid #0984e3; padding-left: 15px; margin-top: 50px; }
-
-        /* Card Itinerari */
-        .itinerary-card { 
-            background: white; border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 30px; 
-            display: flex; flex-direction: column; border: 1px solid #eee;
+        .itinerary-section { display: flex; flex-direction: column; gap: 40px; }
+        
+        .card-tour { 
+            display: grid; grid-template-columns: 1fr; background: #f8f9fa; 
+            border-radius: 25px; overflow: hidden; border: 1px solid #eee;
+            transition: 0.3s;
         }
-        @media (min-width: 768px) { .itinerary-card { flex-direction: row; } }
+        @media (min-width: 768px) { .card-tour { grid-template-columns: 400px 1fr; } }
 
-        .itinerary-img { 
-            min-height: 250px; width: 100%; background-size: cover; background-position: center; 
-        }
-        @media (min-width: 768px) { .itinerary-img { width: 40%; } }
-
-        .itinerary-content { padding: 30px; flex: 1; text-align: left; }
-        .itinerary-content h3 { margin-top: 0; color: #0984e3; font-size: 1.5rem; }
-        .itinerary-content ul { padding-left: 20px; color: #636e72; }
-        .itinerary-content li { margin-bottom: 8px; }
-
-        .btn-itinerario { 
+        .img-box { min-height: 300px; background-size: cover; background-position: center; }
+        
+        .content-box { padding: 40px; text-align: left; }
+        .content-box h2 { color: #0984e3; margin-top: 0; font-size: 1.8rem; }
+        .content-box ul { padding-left: 20px; line-height: 1.8; }
+        
+        .btn-maps { 
             display: inline-block; background: #0984e3; color: white; 
-            text-decoration: none; padding: 12px 25px; border-radius: 50px; 
-            font-weight: bold; margin-top: 15px; transition: 0.3s;
+            text-decoration: none; padding: 15px 30px; border-radius: 50px; 
+            font-weight: bold; margin-top: 20px; box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
         }
-        .btn-itinerario:hover { background: #00cec9; transform: translateY(-2px); }
+        .btn-maps:hover { background: #00cec9; transform: translateY(-3px); }
 
-        footer { background: #0984e3; color: white; padding: 40px; margin-top: 60px; text-align: center; }
+        footer { background: #0984e3; color: white; padding: 50px; margin-top: 60px; text-align: center; }
     </style>
 </head>
 <body>
@@ -69,62 +62,50 @@
 <div class="header-spacer"></div>
 
 <div class="hero-turismo">
-    <h1>Cosa Visitare</h1>
+    <h1>Itinerari</h1>
 </div>
 
 <div class="container">
-    <p style="text-align:center; font-size: 1.1rem; color: #636e72;">Abbiamo selezionato per te i migliori percorsi per scoprire l'anima di Ostuni.</p>
+    <p class="intro-p">Dalla sommità del borgo antico alle acque cristalline della nostra costa.</p>
 
-    <div class="itinerary-card">
-        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="itinerary-content">
-            <h3>📍 Il Cuore della Città Bianca</h3>
-            <p>Un percorso classico tra vicoli imbiancati a calce e panorami mozzafiato.</p>
-            <ul>
-                <li>Piazza della Libertà e Obelisco di Sant'Oronzo</li>
-                <li>Salita lungo Via Cattedrale (Arco Scoppa)</li>
-                <li>Cattedrale di Santa Maria Assunta</li>
-                <li>Piazzetta della Libertà (Vista mare)</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Piazza+della+Libertà,+Ostuni/Cattedrale+di+Santa+Maria+Assunta,+Ostuni/" target="_blank" class="btn-itinerario">APRI MAPPA ITINERARIO</a>
+    <div class="itinerary-section">
+        
+        <div class="card-tour">
+            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="content-box">
+                <h2>📍 Il Borgo Antico (La Terra)</h2>
+                <p>Passeggiata tra le "nchianate" e i monumenti principali del centro storico.</p>
+                <ul>
+                    <li><strong>Piazza della Libertà:</strong> Il salotto della città con l'Obelisco.</li>
+                    <li><strong>Via Cattedrale:</strong> La spina dorsale del centro storico.</li>
+                    <li><strong>La Cattedrale:</strong> Famosa per il suo rosone unico al mondo.</li>
+                    <li><strong>Le Mura Aragonesi:</strong> Per ammirare la distesa degli ulivi.</li>
+                </ul>
+                <a href="https://www.google.com/maps/dir//Piazza+della+Libertà,+Ostuni" target="_blank" class="btn-maps">NAVIGA VERSO IL CENTRO</a>
+            </div>
         </div>
-    </div>
 
-    <div class="itinerary-card">
-        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="itinerary-content">
-            <h3>⛪ Itinerario Religioso</h3>
-            <p>Alla scoperta dei gioielli del barocco pugliese e dei musei.</p>
-            <ul>
-                <li>Chiesa di San Francesco d'Assisi</li>
-                <li>Museo di Civiltà Preclassiche (La Donna di Ostuni)</li>
-                <li>Chiesa dello Spirito Santo</li>
-                <li>Santuario di Sant'Oronzo (fuori centro)</li>
-            </ul>
-            <a href="https://www.google.com/search?q=museo+preclassiche+ostuni+mappa" target="_blank" class="btn-itinerario">VEDI PUNTI DI INTERESSE</a>
+        <div class="card-tour">
+            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="content-box">
+                <h2>🌊 La Marina di Ostuni</h2>
+                <p>A pochi chilometri dal centro, 17 km di costa premiata con la Bandiera Blu.</p>
+                <ul>
+                    <li><strong>Villanova:</strong> L'antico porto Petrolla e il suo castello.</li>
+                    <li><strong>Costa Merlata:</strong> Calette di sabbia e scogli bassi.</li>
+                    <li><strong>Torre Pozzelle:</strong> Riserva naturale con torri d'avvistamento.</li>
+                    <li><strong>Pilone e Rosa Marina:</strong> Spiagge ampie e dune secolari.</li>
+                </ul>
+                <a href="https://www.google.com/maps/dir//Villanova,+Ostuni" target="_blank" class="btn-maps">NAVIGA VERSO IL MARE</a>
+            </div>
         </div>
-    </div>
 
-    <div class="itinerary-card">
-        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="itinerary-content">
-            <h3>🌊 Marina di Ostuni</h3>
-            <p>Le spiagge Bandiera Blu a pochi minuti dal centro.</p>
-            <ul>
-                <li>Villanova (Porticciolo)</li>
-                <li>Costa Merlata (Calette selvagge)</li>
-                <li>Rosa Marina</li>
-                <li>Torre Pozzelle (Riserva Naturale)</li>
-            </ul>
-            <a href="https://www.google.com/maps/search/spiagge+ostuni/" target="_blank" class="btn-itinerario">CERCA SPIAGGE VICINE</a>
-        </div>
     </div>
-
 </div>
 
 <footer>
-    <p><strong>Pro Loco Ostuni APS</strong> - Ufficio Informazioni Corso Mazzini</p>
-    <p>Hai bisogno di una guida? Contattaci su WhatsApp dalla Home!</p>
+    <p><strong>Pro Loco Ostuni APS</strong> - La Città Bianca</p>
+    <p>Piazza Libertà, Ostuni (BR)</p>
 </footer>
 
 </body>
