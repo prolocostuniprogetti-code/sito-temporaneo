@@ -9,18 +9,40 @@
         body, html { margin: 0; padding: 0; min-height: 100%; font-family: 'Montserrat', sans-serif; color: white; background: #1a1a1a; }
         nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000; }
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .header-spacer { height: 100px; }
-        .content { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
         
-        h1 { color: #d4af37; text-align: center; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
-        h2 { color: #d4af37; margin-top: 40px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid #d4af37; padding-left: 10px; }
+        .header-spacer { height: 120px; }
+        .content { padding: 20px; max-width: 1100px; margin: 0 auto; }
         
-        .list { margin-top: 20px; line-height: 1.8; }
-        .item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
-        .name { font-weight: 700; font-size: 0.95rem; }
-        .address { font-size: 0.8rem; opacity: 0.7; text-align: right; }
+        h1 { color: #d4af37; text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
+        
+        .section-title { 
+            background: #d4af37; color: black; padding: 10px 20px; 
+            border-radius: 5px; font-weight: bold; margin-top: 40px;
+            display: inline-block; text-transform: uppercase; letter-spacing: 1px;
+        }
 
-        .counter-box { text-align: center; margin-top: 50px; padding: 20px; border: 1px dashed #d4af37; border-radius: 15px; font-size: 0.85rem; }
+        /* Griglia compatta per contenere centinaia di nomi */
+        .hotel-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+            gap: 10px; margin-top: 20px; 
+        }
+
+        .hotel-card {
+            background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+        }
+        .hotel-card:hover { border-color: #d4af37; background: rgba(255,255,255,0.1); }
+        .hotel-card strong { color: #d4af37; display: block; font-size: 0.95rem; }
+        .hotel-card span { font-size: 0.75rem; opacity: 0.7; }
+
+        .btn-regione {
+            display: block; width: fit-content; margin: 50px auto;
+            background: transparent; color: #d4af37; border: 2px solid #d4af37;
+            padding: 15px 30px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; transition: 0.3s;
+        }
+        .btn-regione:hover { background: #d4af37; color: black; }
     </style>
 </head>
 <body>
@@ -39,33 +61,52 @@
 <div class="header-spacer"></div>
 
 <div class="content">
-    <h1>Dove Dormire a Ostuni</h1>
-    <p style="text-align: center; opacity: 0.8;">Guida completa alle strutture ricettive del territorio.</p>
+    <h1>Guida all'Ospitalità</h1>
+    <p style="text-align:center; opacity:0.8;">Elenco ufficiale delle strutture ricettive di Ostuni (Dati Registro Regionale Puglia)</p>
 
-    <div class="list">
-        <h2>Hotel</h2>
-        <div class="item"><span class="name">Hotel Monte Sarago</span><span class="address">Corso Mazzini</span></div>
-        <div class="item"><span class="name">Ostuni Rosa Marina Resort</span><span class="address">Rosa Marina</span></div>
-        <div class="item"><span class="name">Hotel Incanto</span><span class="address">Via dei Colli</span></div>
-        <div class="item"><span class="name">Relais La Sommità</span><span class="address">Centro Storico</span></div>
-        <h2>Bed & Breakfast</h2>
-        <div class="item"><span class="name">Aria Antica</span><span class="address">C.da Fiorentino</span></div>
-        <div class="item"><span class="name">Cà Giò</span><span class="address">Via de Landria</span></div>
-        <div class="item"><span class="name">Cà Bellavista</span><span class="address">Via Bixio Continelli</span></div>
-        <div class="item"><span class="name">B&B dei Colli</span><span class="address">Via dei Colli</span></div>
-        <h2>Masserie & Agriturismi</h2>
-        <div class="item"><span class="name">Masseria Salinola</span><span class="address">C.da Salinola</span></div>
-        <div class="item"><span class="name">Masseria Asciano</span><span class="address">C.da Lardagnano</span></div>
-        <div class="item"><span class="name">Tenuta Amostuni</span><span class="address">C.da Tamburroni</span></div>
-        <h2>Case Vacanze</h2>
-        <div class="item"><span class="name">Adriatica Residence</span><span class="address">Villanova</span></div>
-        <div class="item"><span class="name">21mq Suite Home</span><span class="address">Vicolo Scalese</span></div>
-        <div class="item"><span class="name">La Piana degli Ulivi</span><span class="address">C.da Li Cuti</span></div>
-        </div>
-
-    <div class="counter-box">
-        L'elenco è in costante aggiornamento. Per segnalazioni o inserimenti, contattare la segreteria Pro Loco.
+    <div class="section-title">Hotel, Resort & Villaggi</div>
+    <div class="hotel-grid">
+        <div class="hotel-card"><strong>Hotel Monte Sarago</strong><span>Corso Mazzini</span></div>
+        <div class="hotel-card"><strong>Relais La Sommità</strong><span>Centro Storico</span></div>
+        <div class="hotel-card"><strong>Ostuni Rosa Marina Resort</strong><span>Litorale Adriatico</span></div>
+        <div class="hotel-card"><strong>Hotel Incanto</strong><span>Via dei Colli</span></div>
+        <div class="hotel-card"><strong>Città Bianca Resort</strong><span>Contrada Turco</span></div>
+        <div class="hotel-card"><strong>Paragon 700 Boutique</strong><span>Largo Bixio Continelli</span></div>
+        <div class="hotel-card"><strong>Hotel Ostuni Palace</strong><span>Corso Vittorio Emanuele</span></div>
+        <div class="hotel-card"><strong>La Terra Hotel</strong><span>Vico Castello</span></div>
     </div>
+
+    <div class="section-title">Masserie & Agriturismi</div>
+    <div class="hotel-grid">
+        <div class="hotel-card"><strong>Masseria Salinola</strong><span>C.da Salinola</span></div>
+        <div class="hotel-card"><strong>Masseria Asciano</strong><span>C.da Lardagnano</span></div>
+        <div class="hotel-card"><strong>Masseria Le Carrube</strong><span>S.S. 16 km 873</span></div>
+        <div class="hotel-card"><strong>Tenuta Amostuni</strong><span>C.da Tamburroni</span></div>
+        <div class="hotel-card"><strong>Masseria Cervarolo</strong><span>C.da Cervarolo</span></div>
+        <div class="hotel-card"><strong>Masseria Valente</strong><span>S.P. Ostuni-Brindisi</span></div>
+        <div class="hotel-card"><strong>Masseria Il Frantoio</strong><span>S.S. 16 km 870</span></div>
+        <div class="hotel-card"><strong>Masseria Le Monache</strong><span>C.da Specchiarica</span></div>
+    </div>
+
+    <div class="section-title">B&B e Case Vacanze (Esempi Principali)</div>
+    <div class="hotel-grid">
+        <div class="hotel-card"><strong>Aria Antica</strong><span>C.da Fiorentino</span></div>
+        <div class="hotel-card"><strong>Cà Giò</strong><span>Via de Landria</span></div>
+        <div class="hotel-card"><strong>Cà Bellavista</strong><span>Via Bixio</span></div>
+        <div class="hotel-card"><strong>B&B dei Colli</strong><span>Zona Panoramica</span></div>
+        <div class="hotel-card"><strong>21mq Suite Home</strong><span>Vicolo Scalese</span></div>
+        <div class="hotel-card"><strong>Adriatica Residence</strong><span>Villanova</span></div>
+        <div class="hotel-card"><strong>Casa Eduardo</strong><span>Zona Campagna</span></div>
+        <div class="hotel-card"><strong>Zaffiro Azzurro</strong><span>Rione Terra</span></div>
+    </div>
+
+    <a href="https://registroregionale.ect.regione.puglia.it/pubblico" target="_blank" class="btn-regione">
+        CONSULTA IL REGISTRO REGIONALE COMPLETO (100+)
+    </a>
+
+    <p style="text-align:center; font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">
+        Elenco in fase di popolamento. Se la tua struttura manca, contatta la Pro Loco.
+    </p>
 </div>
 
 </body>
