@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ospitalità - Pro Loco Ostuni</title>
+    <title>Ospitalità - Pro Loco Ostuni APS</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <style>
         body, html { margin: 0; padding: 0; min-height: 100%; font-family: 'Montserrat', sans-serif; color: white; background: #1a1a1a; }
         nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; z-index: 1000; }
         nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .header-spacer { height: 120px; }
-        .content { padding: 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+        .header-spacer { height: 100px; }
+        .content { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
         
-        .intro-box { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px; }
-        h1 { color: #d4af37; margin-bottom: 10px; }
+        h1 { color: #d4af37; text-align: center; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        h2 { color: #d4af37; margin-top: 40px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid #d4af37; padding-left: 10px; }
         
-        /* Griglia Categorie */
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .cat-card { 
-            background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; 
-            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
-            text-decoration: none; color: white;
-        }
-        .cat-card:hover { background: rgba(212, 175, 55, 0.2); transform: translateY(-5px); }
-        .cat-card h3 { color: #d4af37; margin-top: 10px; }
-        .icon { font-size: 2.5rem; }
-        
-        .notice { font-size: 0.8rem; margin-top: 40px; opacity: 0.7; font-style: italic; }
+        .list { margin-top: 20px; line-height: 1.8; }
+        .item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .name { font-weight: 700; font-size: 0.95rem; }
+        .address { font-size: 0.8rem; opacity: 0.7; text-align: right; }
+
+        .counter-box { text-align: center; margin-top: 50px; padding: 20px; border: 1px dashed #d4af37; border-radius: 15px; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -45,41 +39,33 @@
 <div class="header-spacer"></div>
 
 <div class="content">
-    <div class="intro-box">
-        <h1>Dove Dormire a Ostuni</h1>
-        <p>Ostuni offre oltre 100 strutture tra hotel, masserie e dimore storiche. <br>Scegli la categoria per consultare l'elenco completo.</p>
+    <h1>Dove Dormire a Ostuni</h1>
+    <p style="text-align: center; opacity: 0.8;">Guida completa alle strutture ricettive del territorio.</p>
+
+    <div class="list">
+        <h2>Hotel</h2>
+        <div class="item"><span class="name">Hotel Monte Sarago</span><span class="address">Corso Mazzini</span></div>
+        <div class="item"><span class="name">Ostuni Rosa Marina Resort</span><span class="address">Rosa Marina</span></div>
+        <div class="item"><span class="name">Hotel Incanto</span><span class="address">Via dei Colli</span></div>
+        <div class="item"><span class="name">Relais La Sommità</span><span class="address">Centro Storico</span></div>
+        <h2>Bed & Breakfast</h2>
+        <div class="item"><span class="name">Aria Antica</span><span class="address">C.da Fiorentino</span></div>
+        <div class="item"><span class="name">Cà Giò</span><span class="address">Via de Landria</span></div>
+        <div class="item"><span class="name">Cà Bellavista</span><span class="address">Via Bixio Continelli</span></div>
+        <div class="item"><span class="name">B&B dei Colli</span><span class="address">Via dei Colli</span></div>
+        <h2>Masserie & Agriturismi</h2>
+        <div class="item"><span class="name">Masseria Salinola</span><span class="address">C.da Salinola</span></div>
+        <div class="item"><span class="name">Masseria Asciano</span><span class="address">C.da Lardagnano</span></div>
+        <div class="item"><span class="name">Tenuta Amostuni</span><span class="address">C.da Tamburroni</span></div>
+        <h2>Case Vacanze</h2>
+        <div class="item"><span class="name">Adriatica Residence</span><span class="address">Villanova</span></div>
+        <div class="item"><span class="name">21mq Suite Home</span><span class="address">Vicolo Scalese</span></div>
+        <div class="item"><span class="name">La Piana degli Ulivi</span><span class="address">C.da Li Cuti</span></div>
+        </div>
+
+    <div class="counter-box">
+        L'elenco è in costante aggiornamento. Per segnalazioni o inserimenti, contattare la segreteria Pro Loco.
     </div>
-
-    <div class="category-grid">
-        <a href="#" class="cat-card">
-            <div class="icon">🏨</div>
-            <h3>Hotel & Resort</h3>
-            <p>Le grandi strutture e i servizi esclusivi.</p>
-        </a>
-
-        <a href="#" class="cat-card">
-            <div class="icon">🏡</div>
-            <h3>B&B e Dimore</h3>
-            <p>L'accoglienza calorosa nel borgo antico.</p>
-        </a>
-
-        <a href="#" class="cat-card">
-            <div class="icon">🌳</div>
-            <h3>Masserie</h3>
-            <p>Il fascino della Puglia rurale tra gli ulivi.</p>
-        </a>
-
-        <a href="#" class="cat-card">
-            <div class="icon">🔑</div>
-            <h3>Case Vacanze</h3>
-            <p>Indipendenza e comfort per la tua famiglia.</p>
-        </a>
-    </div>
-
-    <p class="notice">
-        Sei un titolare di una struttura ricettiva e vuoi apparire in questo elenco? <br>
-        Contatta la Pro Loco Ostuni per conoscere le modalità di inserimento.
-    </p>
 </div>
 
 </body>
