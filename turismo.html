@@ -11,41 +11,44 @@
         nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
         .header-spacer { height: 75px; }
 
-        /* Banner con la tua foto corretta */
+        /* BANNER CON LA TUA NUOVA FOTO PANORAMICA */
         .hero-turismo { 
-            height: 45vh; 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('2021-08-04.webp');
+            height: 50vh; 
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('20260118_181129.jpg');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center; color: white;
         }
-        .hero-turismo h1 { font-size: 3.5rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; font-weight: 700; }
+        .hero-turismo h1 { font-size: 3.5rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin: 0; font-weight: 700; text-transform: uppercase; }
 
         .container { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
-        .intro-p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: #636e72; }
+        .intro-p { text-align: center; font-size: 1.1rem; margin-bottom: 50px; color: #636e72; }
 
-        .itinerary-section { display: flex; flex-direction: column; gap: 40px; }
-        
-        .card-tour { 
+        .itinerary-card { 
             display: grid; grid-template-columns: 1fr; background: #f8f9fa; 
             border-radius: 25px; overflow: hidden; border: 1px solid #eee;
-            transition: 0.3s;
+            margin-bottom: 40px; transition: 0.3s;
         }
-        @media (min-width: 768px) { .card-tour { grid-template-columns: 400px 1fr; } }
+        @media (min-width: 768px) { .itinerary-card { grid-template-columns: 350px 1fr; } }
 
-        .img-box { min-height: 300px; background-size: cover; background-position: center; }
+        .img-box { min-height: 250px; background-size: cover; background-position: center; }
         
-        .content-box { padding: 40px; text-align: left; }
-        .content-box h2 { color: #0984e3; margin-top: 0; font-size: 1.8rem; }
-        .content-box ul { padding-left: 20px; line-height: 1.8; }
+        /* Immagini specifiche degli itinerari */
+        .img-centro { background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80'); } /* Foto del Rosone */
+        .img-cultura { background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80'); } /* Cultura/Musei */
+        .img-mare { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'); } /* Mare */
+
+        .content-box { padding: 30px; text-align: left; }
+        .content-box h3 { color: #0984e3; margin-top: 0; font-size: 1.6rem; font-weight: 700; }
+        .content-box ul { padding-left: 20px; color: #636e72; line-height: 1.6; }
         
-        .btn-maps { 
+        .btn-tour { 
             display: inline-block; background: #0984e3; color: white; 
-            text-decoration: none; padding: 15px 30px; border-radius: 50px; 
-            font-weight: bold; margin-top: 20px; box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
+            text-decoration: none; padding: 12px 25px; border-radius: 50px; 
+            font-weight: bold; margin-top: 15px; transition: 0.3s;
         }
-        .btn-maps:hover { background: #00cec9; transform: translateY(-3px); }
+        .btn-tour:hover { background: #00cec9; transform: translateY(-3px); }
 
-        footer { background: #0984e3; color: white; padding: 50px; margin-top: 60px; text-align: center; }
+        footer { background: #0984e3; color: white; padding: 40px; margin-top: 60px; text-align: center; }
     </style>
 </head>
 <body>
@@ -62,50 +65,62 @@
 <div class="header-spacer"></div>
 
 <div class="hero-turismo">
-    <h1>Itinerari</h1>
+    <h1>Cosa Visitare</h1>
 </div>
 
 <div class="container">
-    <p class="intro-p">Dalla sommità del borgo antico alle acque cristalline della nostra costa.</p>
+    <p class="intro-p">Scopri i percorsi più suggestivi della Città Bianca, tra storia, arte e mare.</p>
 
-    <div class="itinerary-section">
-        
-        <div class="card-tour">
-            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80');"></div>
-            <div class="content-box">
-                <h2>📍 Il Borgo Antico (La Terra)</h2>
-                <p>Passeggiata tra le "nchianate" e i monumenti principali del centro storico.</p>
-                <ul>
-                    <li><strong>Piazza della Libertà:</strong> Il salotto della città con l'Obelisco.</li>
-                    <li><strong>Via Cattedrale:</strong> La spina dorsale del centro storico.</li>
-                    <li><strong>La Cattedrale:</strong> Famosa per il suo rosone unico al mondo.</li>
-                    <li><strong>Le Mura Aragonesi:</strong> Per ammirare la distesa degli ulivi.</li>
-                </ul>
-                <a href="https://www.google.com/maps/dir//Piazza+della+Libertà,+Ostuni" target="_blank" class="btn-maps">NAVIGA VERSO IL CENTRO</a>
-            </div>
+    <div class="itinerary-card">
+        <div class="img-box img-centro"></div>
+        <div class="content-box">
+            <h3>📍 Il Borgo Antico</h3>
+            <p>Passeggiata nel cuore della "Terra", tra vicoli bianchi e architettura medievale.</p>
+            <ul>
+                <li>Piazza della Libertà e Obelisco di Sant'Oronzo</li>
+                <li>Via Cattedrale e il celebre Rosone</li>
+                <li>Le antiche Mura Aragonesi</li>
+                <li>Porta Nova e i belvedere sulla piana degli ulivi</li>
+            </ul>
+            <a href="https://www.google.com/maps/search/Cattedrale+Ostuni" target="_blank" class="btn-tour">APRI MAPPA</a>
         </div>
-
-        <div class="card-tour">
-            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');"></div>
-            <div class="content-box">
-                <h2>🌊 La Marina di Ostuni</h2>
-                <p>A pochi chilometri dal centro, 17 km di costa premiata con la Bandiera Blu.</p>
-                <ul>
-                    <li><strong>Villanova:</strong> L'antico porto Petrolla e il suo castello.</li>
-                    <li><strong>Costa Merlata:</strong> Calette di sabbia e scogli bassi.</li>
-                    <li><strong>Torre Pozzelle:</strong> Riserva naturale con torri d'avvistamento.</li>
-                    <li><strong>Pilone e Rosa Marina:</strong> Spiagge ampie e dune secolari.</li>
-                </ul>
-                <a href="https://www.google.com/maps/dir//Villanova,+Ostuni" target="_blank" class="btn-maps">NAVIGA VERSO IL MARE</a>
-            </div>
-        </div>
-
     </div>
+
+    <div class="itinerary-card">
+        <div class="img-box img-cultura"></div>
+        <div class="content-box">
+            <h3>🏛️ Storia e Tradizioni</h3>
+            <p>Un itinerario dedicato ai tesori archeologici e alle chiese barocche.</p>
+            <ul>
+                <li>Museo Civico (La Donna di Ostuni)</li>
+                <li>Chiesa di San Francesco d'Assisi</li>
+                <li>Chiesa dello Spirito Santo</li>
+                <li>Il Parco Archeologico di Santa Maria di Agnano</li>
+            </ul>
+            <a href="https://www.google.com/maps/search/Museo+Civico+Ostuni" target="_blank" class="btn-tour">VEDI DETTAGLI</a>
+        </div>
+    </div>
+
+    <div class="itinerary-card">
+        <div class="img-box img-mare"></div>
+        <div class="content-box">
+            <h3>🌊 Marina di Ostuni</h3>
+            <p>Esplora i 17 km di litorale Bandiera Blu, tra porticcioli e riserve naturali.</p>
+            <ul>
+                <li>Villanova e il porticciolo turistico</li>
+                <li>Le calette di Costa Merlata</li>
+                <li>Riserva Naturale di Torre Pozzelle</li>
+                <li>Spiaggia del Pilone e le dune costiere</li>
+            </ul>
+            <a href="https://www.google.com/maps/search/Spiagge+Ostuni" target="_blank" class="btn-tour">ESPLORA LA COSTA</a>
+        </div>
+    </div>
+
 </div>
 
 <footer>
-    <p><strong>Pro Loco Ostuni APS</strong> - La Città Bianca</p>
-    <p>Piazza Libertà, Ostuni (BR)</p>
+    <p><strong>Pro Loco Ostuni - La Città Bianca</strong></p>
+    <p>Piazza della Libertà, Ostuni (BR)</p>
 </footer>
 
 </body>
