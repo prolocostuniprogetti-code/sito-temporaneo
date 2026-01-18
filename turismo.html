@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo - Pro Loco Ostuni APS</title>
+    <title>Ospitalità - Pro Loco Ostuni APS</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <style>
         body, html { margin: 0; padding: 0; min-height: 100%; font-family: 'Montserrat', sans-serif; color: white; background: #1a1a1a; overflow-x: hidden; }
@@ -17,26 +17,30 @@
         nav a:hover { color: #d4af37; }
 
         .header-spacer { height: 120px; }
-
-        .content { padding: 20px; max-width: 900px; margin: 0 auto; }
+        .content { padding: 20px; max-width: 1000px; margin: 0 auto; }
 
         .glass-box { 
             background: rgba(255, 255, 255, 0.05); 
             padding: 30px; border-radius: 25px; 
             border: 1px solid rgba(255,255,255,0.1); 
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
-        h1 { color: #d4af37; font-size: 2.2rem; border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 25px; }
-        h2 { color: #d4af37; margin-top: 30px; font-size: 1.5rem; }
+        h1 { color: #d4af37; font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; opacity: 0.8; margin-bottom: 40px; }
         
-        .feature-box { 
-            background: rgba(212, 175, 55, 0.1); 
-            padding: 20px; border-radius: 15px; 
-            margin: 15px 0; border-left: 5px solid #d4af37;
+        h2 { color: #d4af37; border-left: 5px solid #d4af37; padding-left: 15px; margin-top: 40px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { 
+            background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px; 
+            transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.05);
         }
-        
+        .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .card h3 { margin: 0 0 10px 0; color: #d4af37; font-size: 1.1rem; }
+        .card p { margin: 0; font-size: 0.9rem; line-height: 1.5; opacity: 0.9; }
+        .tag { font-size: 0.7rem; text-transform: uppercase; background: #d4af37; color: black; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+
         .footer { text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.6; padding-bottom: 30px; }
     </style>
 </head>
@@ -56,30 +60,41 @@
 <div class="header-spacer"></div>
 
 <div class="content">
+    <h1>Dove Dormire</h1>
+    <p class="subtitle">Dagli hotel di lusso alle masserie immerse negli ulivi: l'accoglienza di Ostuni per ogni esigenza.</p>
+
     <div class="glass-box">
-        <h1>Scopri Ostuni</h1>
-        <p>Ostuni non è solo una città, è un'esperienza sensoriale fatta di luce, storia e profumi mediterranei. Nota come la "Città Bianca" per il candore delle sue case, domina la valle degli ulivi secolari fino all'azzurro del mare Adriatico.</p>
-        
-        <div class="feature-box">
-            <h3>Il Borgo Antico (La Terra)</h3>
-            <p>Un labirinto di stradine, archi e scalinate dove ogni angolo regala uno scorcio indimenticabile. Perdersi tra i vicoli imbiancati a calce è il modo migliore per respirare l'anima della città.</p>
+        <h2>Hotel & Resort</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">Hotel</span><h3>Hotel Monte Sarago</h3><p>Elegante struttura con vista panoramica sulla Città Bianca e sulla costa.</p></div>
+            <div class="card"><span class="tag">Resort</span><h3>Ostuni Rosa Marina Resort</h3><p>Immerso nel verde a pochi passi dalle spiagge dell'Adriatico.</p></div>
+            <div class="card"><span class="tag">Hotel</span><h3>Relais La Sommità</h3><p>Lusso e charme nel punto più alto del centro storico.</p></div>
         </div>
 
-        <div class="feature-box">
-            <h3>La Cattedrale</h3>
-            <p>Situata sulla sommità del colle, la Basilica Minore di Santa Maria Assunta è celebre per il suo imponente rosone, uno dei più grandi al mondo, simbolo dell'arte tardo-gotica in Puglia.</p>
+        <h2>B&B e Dimore Tipiche</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">B&B</span><h3>Cà Giò Ostuni</h3><p>Accoglienza raffinata con percorsi benessere nel cuore della città.</p></div>
+            <div class="card"><span class="tag">B&B</span><h3>Aria Antica</h3><p>L'emozione di dormire in una struttura tradizionale immersa negli ulivi.</p></div>
+            <div class="card"><span class="tag">B&B</span><h3>Cà Bellavista</h3><p>Ospitalità autentica con affacci indimenticabili.</p></div>
         </div>
 
-        <h2>Il Territorio</h2>
-        <p>Oltre il centro storico, Ostuni offre una costa frastagliata con spiagge premiate dalla Bandiera Blu e il <strong>Parco Naturale Regionale delle Dune Costiere</strong>, un'oasi di biodiversità tra ulivi millenari e zone umide.</p>
+        <h2>Agriturismi e Masserie</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">Agriturismo</span><h3>Masseria Asciano</h3><p>Tradizione rurale e produzione biologica di olio extravergine d'oliva.</p></div>
+            <div class="card"><span class="tag">Agriturismo</span><h3>Salinola</h3><p>Un'oasi di pace ideale per famiglie e amanti della cucina tipica.</p></div>
+            <div class="card"><span class="tag">Masseria</span><h3>Tenuta Amostuni</h3><p>Country House di charme per un soggiorno a stretto contatto con la natura.</p></div>
+        </div>
 
-        <div class="feature-box" style="background: rgba(255,255,255,0.05); border-left-color: white;">
-            <p>📍 <strong>Info Point Pro Loco:</strong> Venite a trovarci per mappe, guide e consigli personalizzati per vivere al meglio il vostro soggiorno.</p>
+        <h2>Case Vacanze</h2>
+        <div class="grid">
+            <div class="card"><span class="tag">Appartamento</span><h3>21mq Suite Home</h3><p>Design moderno in spazi storici, perfetto per coppie.</p></div>
+            <div class="card"><span class="tag">Casa Vacanze</span><h3>Stanza Zaffiro Azzurro</h3><p>Soggiorni suggestivi nel labirinto bianco del centro storico.</p></div>
+            <div class="card"><span class="tag">Casa Vacanze</span><h3>La Piana degli Ulivi</h3><p>Soluzioni indipendenti per vivere il territorio in totale libertà.</p></div>
         </div>
     </div>
 
     <div class="footer">
-        Pro Loco Ostuni APS - Valorizziamo la nostra terra
+        Pro Loco Ostuni APS - Guida completa all'offerta ricettiva locale
     </div>
 </div>
 
