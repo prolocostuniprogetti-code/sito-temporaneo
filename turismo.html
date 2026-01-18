@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Itinerario completo centro storico Ostuni: cosa vedere, mappa, dove mangiare. Guida Pro Loco Città Bianca.">
-    <title>Turismo - Itinerario Ostuni | Pro Loco</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <title>Turismo - Pro Loco Ostuni "La Città Bianca"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bianco-ostuni: #fdf6e3; --blu-proloco: #2c5282; --oro-caldo: #d69e2e; 
-            --beige-mura: #e6d3b2; --verde-puglia: #6b7a4e; --testo: #2d3748;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, var(--bianco-ostuni) 0%, #f9f4e8 100%); color: var(--testo); line-height: 1.7; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #2d3436; }
         
-        nav { position: fixed; top: 0; width: 100%; background: rgba(44,82,130,0.95); backdrop-filter: blur(10px); padding: 1rem 0; display: flex; justify-content: center; gap: 2rem; z-index: 1000; box-shadow: 0 4px 20px rgba(44,82,130,0.2); }
-        nav a { color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; text-transform: uppercase; }
-        nav a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        /* Navigazione Blu */
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 0; background: #0984e3; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
 
-        .header-spacer { height: 90px; }
+        .header-spacer { height: 70px; }
 
-        .hero { 
-            background: linear-gradient(rgba(44,82,130,0.5), rgba(44,82,130,0.3)), 
-                        url('https://images.unsplash.com/photo-1620274219394-349015a8fc63?w=2000&q=85');
-            background-size: cover; background-position: center; height: 70vh; display: flex; flex-direction: column; 
-            align-items: center; justify-content: center; color: white; text-align: center;
+        /* Banner Turismo */
+        .hero-turismo { 
+            height: 40vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('2021-08-04.webp');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; color: white;
         }
-        .hero h1 { font-family: 'Crimson Text', serif; font-size: clamp(3rem, 7vw, 4.5rem); margin-bottom: 1rem; text-shadow: 0 4px 12px rgba(0,0,0,0.6); }
-        .hero p { font-size: clamp(1.1rem, 3vw, 1.5rem); max-width: 800px; }
+        .hero-turismo h1 { font-size: 3rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); margin: 0; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .container { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
 
-        .itinerario-step { display: grid; grid-template-columns: 1fr 250px 1fr; gap: 2rem; align-items: center; margin-bottom: 4rem; padding: 2.5rem; 
-                           background: rgba(255,255,255,0.8); border-radius: 25px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
-                           border-left: 6px solid var(--oro-caldo); transition: transform 0.3s; }
-        .itinerario-step:hover { transform: translateX(10px); }
-        .step-numero { background: linear-gradient(var(--oro-caldo), var(--verde-puglia)); color: white; width: 80px; height: 80px; 
-                       border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; }
-        .step-content h3 { color: var(--blu-proloco); font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-bottom: 1rem; }
-        .step-mappa { text-align: center; }
-        .step-mappa img { width: 200px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+        h2 { color: #0984e3; border-left: 5px solid #0984e3; padding-left: 15px; margin-top: 50px; }
 
-        #mappa { height: 500px; border-radius: 20px; margin: 3rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        /* Card Itinerari */
+        .itinerary-card { 
+            background: white; border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 30px; 
+            display: flex; flex-direction: column; border: 1px solid #eee;
+        }
+        @media (min-width: 768px) { .itinerary-card { flex-direction: row; } }
 
-        .dove-mangiare { background: linear-gradient(135deg, var(--beige-mura), var(--bianco-ostuni)); padding: 4rem; border-radius: 30px; margin: 4rem 0; }
-        .ristoranti-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .ristorante-card { background: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .ristorante-card:hover { transform: translateY(-8px); }
-        .ristorante-card h4 { color: var(--blu-proloco); margin-bottom: 1rem; }
+        .itinerary-img { 
+            min-height: 250px; width: 100%; background-size: cover; background-position: center; 
+        }
+        @media (min-width: 768px) { .itinerary-img { width: 40%; } }
 
-        .consigli { background: rgba(44,82,130,0.05); padding: 3rem; border-radius: 20px; margin-top: 3rem; border-left: 5px solid var(--blu-proloco); }
+        .itinerary-content { padding: 30px; flex: 1; text-align: left; }
+        .itinerary-content h3 { margin-top: 0; color: #0984e3; font-size: 1.5rem; }
+        .itinerary-content ul { padding-left: 20px; color: #636e72; }
+        .itinerary-content li { margin-bottom: 8px; }
 
-        footer { background: linear-gradient(135deg, var(--blu-proloco), #1e3a8a); color: white; text-align: center; padding: 3rem 2rem; margin-top: 5rem; }
-        footer a { color: var(--oro-caldo); font-weight: 600; }
+        .btn-itinerario { 
+            display: inline-block; background: #0984e3; color: white; 
+            text-decoration: none; padding: 12px 25px; border-radius: 50px; 
+            font-weight: bold; margin-top: 15px; transition: 0.3s;
+        }
+        .btn-itinerario:hover { background: #00cec9; transform: translateY(-2px); }
 
-        @media (max-width: 768px) { .itinerario-step { grid-template-columns: 1fr; text-align: center; } }
+        footer { background: #0984e3; color: white; padding: 40px; margin-top: 60px; text-align: center; }
     </style>
 </head>
 <body>
@@ -64,109 +61,71 @@
     <a href="index.html">Home</a>
     <a href="chi-siamo.html">Chi Siamo</a>
     <a href="trasparenza.html">Trasparenza</a>
-    <a href="turismo.html" style="background:rgba(255,255,255,0.2)">Turismo</a>
+    <a href="turismo.html">Turismo</a>
     <a href="offerta-ricettiva.html">Ospitalità</a>
     <a href="eventi.html">Eventi</a>
 </nav>
 
 <div class="header-spacer"></div>
 
-<div class="hero">
-    <h1>Itinerario<br>Centro Storico</h1>
-    <p>3 ore a piedi per scoprire la Città Bianca: mappa interattiva, monumenti e ristoranti consigliati Pro Loco</p>
+<div class="hero-turismo">
+    <h1>Cosa Visitare</h1>
 </div>
 
 <div class="container">
+    <p style="text-align:center; font-size: 1.1rem; color: #636e72;">Abbiamo selezionato per te i migliori percorsi per scoprire l'anima di Ostuni.</p>
 
-    <div class="itinerario-step">
-        <div class="step-numero">1</div>
-        <div>
-            <h3>Corso Mazzini → Arco Scoppa</h3>
-            <p>Inizio dal cuore pulsante: negozi, bar e l'antico ingresso al centro storico. Pro Loco a dx!</p>
-        </div>
-        <div class="step-mappa">
-            <img src="https://images.unsplash.com/photo-1620274219394-349015a8fc63?w=200&h=150&fit=crop" alt="Corso Mazzini">
+    <div class="itinerary-card">
+        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="itinerary-content">
+            <h3>📍 Il Cuore della Città Bianca</h3>
+            <p>Un percorso classico tra vicoli imbiancati a calce e panorami mozzafiato.</p>
+            <ul>
+                <li>Piazza della Libertà e Obelisco di Sant'Oronzo</li>
+                <li>Salita lungo Via Cattedrale (Arco Scoppa)</li>
+                <li>Cattedrale di Santa Maria Assunta</li>
+                <li>Piazzetta della Libertà (Vista mare)</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Piazza+della+Libertà,+Ostuni/Cattedrale+di+Santa+Maria+Assunta,+Ostuni/" target="_blank" class="btn-itinerario">APRI MAPPA ITINERARIO</a>
         </div>
     </div>
 
-    <div class="itinerario-step">
-        <div class="step-numero">2</div>
-        <div>
-            <h3>Piazza della Libertà</h3>
-            <p>Obelisco Sant'Oronzo, Palazzo Ducale, Chiesa San Francesco. Pausa caffè!</p>
-        </div>
-        <div class="step-mappa">
-            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=200&h=150&fit=crop" alt="Piazza Libertà">
-        </div>
-    </div>
-
-    <div class="itinerario-step">
-        <div class="step-numero">3</div>
-        <div>
-            <h3>Cattedrale Santa Maria & Museo</h3>
-            <p>Rosone gotico, interno barocco, reperti neandertaliani al Museo Preclassiche (stesso palazzo).</p>
-        </div>
-        <div class="step-mappa">
-            <img src="https://images.unsplash.com/photo-1585320702817-0fd9a3b9e6a2?w=200&h=150&fit=crop" alt="Cattedrale Ostuni">
+    <div class="itinerary-card">
+        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="itinerary-content">
+            <h3>⛪ Itinerario Religioso</h3>
+            <p>Alla scoperta dei gioielli del barocco pugliese e dei musei.</p>
+            <ul>
+                <li>Chiesa di San Francesco d'Assisi</li>
+                <li>Museo di Civiltà Preclassiche (La Donna di Ostuni)</li>
+                <li>Chiesa dello Spirito Santo</li>
+                <li>Santuario di Sant'Oronzo (fuori centro)</li>
+            </ul>
+            <a href="https://www.google.com/search?q=museo+preclassiche+ostuni+mappa" target="_blank" class="btn-itinerario">VEDI PUNTI DI INTERESSE</a>
         </div>
     </div>
 
-    <div id="mappa"></div>
-
-    <div class="dove-mangiare">
-        <h2 style="margin-bottom:2rem">Dove Mangiare</h2>
-        <div class="ristoranti-grid">
-            <div class="ristorante-card">
-                <h4>🌿 Osteria del Tempo Perso</h4>
-                <p>Orecchiette, burrata, capocollo | €25-35 | Via Gaetano Tanzarella Vita 47</p>
-            </div>
-            <div class="ristorante-card">
-                <h4>🍝 Trattoria Don Peppe</h4>
-                <p>Cavatelli alla brigante, bombette | €20-30 | Via Francesco Campana 36</p>
-            </div>
-            <div class="ristorante-card">
-                <h4>🍷 La Locanda di Albe</h4>
-                <p>Menu degustazione Puglia | €40+ | Via Galileo Galilei 6</p>
-            </div>
+    <div class="itinerary-card">
+        <div class="itinerary-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="itinerary-content">
+            <h3>🌊 Marina di Ostuni</h3>
+            <p>Le spiagge Bandiera Blu a pochi minuti dal centro.</p>
+            <ul>
+                <li>Villanova (Porticciolo)</li>
+                <li>Costa Merlata (Calette selvagge)</li>
+                <li>Rosa Marina</li>
+                <li>Torre Pozzelle (Riserva Naturale)</li>
+            </ul>
+            <a href="https://www.google.com/maps/search/spiagge+ostuni/" target="_blank" class="btn-itinerario">CERCA SPIAGGE VICINE</a>
         </div>
-    </div>
-
-    <div class="consigli">
-        <h2>Consigli Pro Loco</h2>
-        <ul style="max-width:800px; margin:2rem auto; font-size:1.1rem;">
-            <li><strong>Mattina presto</strong>: meno caldo, luce perfetta per foto</li>
-            <li><strong>Scarpe comode</strong>: salite ripide ma fattibili</li>
-            <li><strong>Mappe Pro Loco</strong>:  in sede Corso Mazzini 18</li>
-            <li><strong>Visite guidate</strong>: chiedi servizio in convenzione con guide turistiche abilitate</li>
-        </ul>
     </div>
 
 </div>
 
 <footer>
-    <p><strong>Pro Loco Ostuni APS</strong> | Corso Mazzini 18 | <a href="mailto:info@prolocostuni.it">info@prolocostuni.it</a></p>
-    <p>Affiliata UNPLI | © 2026 | <a href="offerta-ricettiva.html">Ospitalità</a> | <a href="eventi.html">Eventi</a></p>
+    <p><strong>Pro Loco Ostuni APS</strong> - Ufficio Informazioni Corso Mazzini</p>
+    <p>Hai bisogno di una guida? Contattaci su WhatsApp dalla Home!</p>
 </footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    var map = L.map('mappa').setView([40.7301, 17.5778], 16);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap Pro Loco Ostuni'
-    }).addTo(map);
-    
-    // Punti itinerario
-    var punti = [
-        ['Pro Loco', 40.7305, 17.5770, 'Sede partenza'],
-        ['Piazza Libertà', 40.7308, 17.5785, 'Cuore città'],
-        ['Cattedrale', 40.7312, 17.5792, 'Punto arrivo']
-    ];
-    
-    punti.forEach(function(punto) {
-        L.marker([punto[1], punto[2]]).addTo(map)
-            .bindPopup('<b>' + punto[0] + '</b><br>' + punto[3]);
-    });
-</script>
 
 </body>
 </html>
